@@ -97,6 +97,19 @@
 		font-style: italic;
 	}
 	
+	table, th, td {
+		border: 1px solid #777;
+		text-align: center;
+		width: auto;
+		border-spacing: 2px;
+		border-collapse: separate;
+		/* horizontal-padding: 2px; */
+	}
+	th, td {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
 	p, ul, ol, dl, table
 	{
 		margin-bottom: 1em;
