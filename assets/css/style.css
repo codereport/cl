@@ -23,8 +23,9 @@
 	{
 		font-family: 'Roboto', sans-serif;
 		font-size: 11pt;
-		font-weight: 300;
-		line-height: 1.75em;
+		/* font-weight: 300; */
+		font-weight: bold;
+		line-height: 2.5em;
 		color: #777;
 	}
 
@@ -771,7 +772,7 @@
 	#header
 	{
 		position: relative;
-		background: url(../images/header.jpg) no-repeat bottom center;
+		background: url(../images/bqn_combinators_small_dark.png) no-repeat bottom center;
 		background-attachment: fixed;
 		background-size: cover;
 		text-align: center;
@@ -986,7 +987,7 @@
 	{
 		position: relative;
 		text-align: center;
-		background: url(../images/header.jpg) no-repeat center center;
+		background: url(../images/bqn_combinators_small_dark.png) no-repeat center center;
 		background-attachment: fixed;
 		background-size: cover;
 	}
