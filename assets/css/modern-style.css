@@ -88,11 +88,6 @@ p {
 a {
     color: var(--accent-primary);
     text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    color: var(--accent-hover);
 }
 
 code {
@@ -130,7 +125,7 @@ blockquote {
 /* Header and Navigation */
 .header {
     background: var(--bg-primary);
-    box-shadow: var(--header-shadow);
+    border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -146,7 +141,7 @@ blockquote {
     margin: 0 auto;
     padding: 0 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     height: 4rem;
 }
@@ -162,9 +157,7 @@ blockquote {
     text-decoration: none;
 }
 
-.nav-logo:hover {
-    color: var(--accent-primary);
-}
+
 
 /* Mobile Navigation Toggle */
 .nav-toggle {
@@ -235,7 +228,7 @@ blockquote {
     background: var(--bg-primary);
     transform: translateX(-100%);
     transition: transform 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0 4px 6px var(--shadow-color);
+    border-right: 1px solid var(--border-color);
 }
 
 .nav-menu-open {
@@ -262,11 +255,7 @@ blockquote {
     border-left: 3px solid transparent;
 }
 
-.nav-link:hover {
-    background: var(--bg-secondary);
-    color: var(--accent-primary);
-    border-left-color: var(--accent-primary);
-}
+
 
 .nav-link-active {
     color: var(--accent-primary);
@@ -286,6 +275,7 @@ blockquote {
     align-items: center;
     justify-content: center;
     padding: 1rem 2rem;
+    border-left: none !important;
 }
 
 .theme-toggle-wrapper {
@@ -327,7 +317,6 @@ blockquote {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .theme-toggle-input:checked + .theme-toggle-label .theme-toggle-slider {
@@ -466,17 +455,13 @@ blockquote {
 .card {
     background: var(--bg-primary);
     border-radius: 0.75rem;
-    box-shadow: 0 4px 6px var(--shadow-color);
     padding: 2rem;
     margin-bottom: 2rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+    transition: background-color 0.3s ease;
     border: 1px solid var(--border-color);
 }
 
-.card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px var(--shadow-color);
-}
+
 
 /* Video Responsive */
 .video-container {
@@ -514,7 +499,6 @@ blockquote {
     overflow-x: auto;
     margin: 2rem 0;
     border-radius: 0.75rem;
-    box-shadow: 0 4px 6px var(--shadow-color);
     background: var(--bg-primary);
     border: 1px solid var(--border-color);
 }
@@ -596,11 +580,6 @@ blockquote {
     font-weight: 500;
 }
 
-.links-list a:hover {
-    color: var(--accent-hover);
-    text-decoration: underline;
-}
-
 .links-list > li > ul > li {
     font-weight: 600;
     color: var(--text-secondary);
@@ -675,13 +654,10 @@ blockquote {
     background: var(--text-tertiary);
     color: var(--bg-primary);
     border-radius: 50%;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
-.social-link:hover {
-    background: var(--accent-primary);
-    transform: translateY(-2px);
-}
+
 
 .footer-credits {
     font-size: 0.875rem;
@@ -689,10 +665,6 @@ blockquote {
 
 .footer-credits a {
     color: var(--accent-primary);
-}
-
-.footer-credits a:hover {
-    color: var(--accent-hover);
 }
 
 /* Utility Classes */
