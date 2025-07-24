@@ -621,20 +621,21 @@ blockquote {
 .quote {
     max-width: 600px;
     margin: 0 auto;
-    color: #ffffff;
+    color: var(--text-secondary);
 }
 
 .quote p {
     font-size: 1.5rem;
     font-style: italic;
     margin-bottom: 1rem;
-    color: #ffffff;
+    color: var(--text-secondary);
 }
 
 .quote cite {
     font-size: 1rem;
     opacity: 0.9;
     font-style: normal;
+    color: var(--text-tertiary);
 }
 
 /* Footer */
