@@ -19,6 +19,14 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/css/modern-style.css">
+    
+    <!-- Early theme detection to prevent FOUC -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
 </head>
 <body>
     <!-- Header -->
@@ -61,8 +69,26 @@
 
 
 
-    <!-- JavaScript for mobile navigation -->
+    <!-- JavaScript for mobile navigation and dark mode -->
     <script>
+        // Dark mode functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        // Get current theme (already set by early script)
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        
+        // Initialize toggle slider
+        if (themeToggle) {
+            themeToggle.checked = currentTheme === 'dark';
+            
+            // Theme toggle event listener
+            themeToggle.addEventListener('change', function() {
+                const newTheme = this.checked ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+        }
+
         // Mobile navigation toggle
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
