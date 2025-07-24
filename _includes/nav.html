@@ -1,14 +1,21 @@
-<div id="nav-wrapper">
-	<!-- Nav -->
-	<nav id="nav">
-		<ul>
-			{% assign current = page.url | downcase | split: '/' %}
-			<li {% if current[1] == 'index.html' %}class='current'{% endif %}><a href="/index.html">Home</a></li>
-			<!-- <li {% if current[1] == 'blog' %}class='current'{% endif %}><a href="/blog">Blog</a></li>
-			<li {% if current[1] == 'left-sidebar.html' %}class='current'{% endif %}><a href="/left-sidebar.html">Left Sidebar</a></li>
-			<li {% if current[1] == 'right-sidebar.html' %}class='current'{% endif %}><a href="/right-sidebar.html">Right Sidebar</a></li> -->
-			<li {% if current[1] == 'table.html' %}class='current'{% endif %}><a href="/table.html">Table</a></li>
-			<li {% if current[1] == 'links.html' %}class='current'{% endif %}><a href="/links.html">Links</a></li>
-		</ul>
-	</nav>
-</div>
+<ul class="nav-list">
+    {% assign current = page.url | downcase | split: '/' %}
+    <li class="nav-item">
+        <a href="/" class="nav-link {% if page.url == '/' or page.url == '/index.html' %}nav-link-active{% endif %}">
+            <i class="fas fa-home nav-icon"></i>
+            <span>Home</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/table.html" class="nav-link {% if current[1] == 'table.html' %}nav-link-active{% endif %}">
+            <i class="fas fa-table nav-icon"></i>
+            <span>Table</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="/links.html" class="nav-link {% if current[1] == 'links.html' %}nav-link-active{% endif %}">
+            <i class="fas fa-link nav-icon"></i>
+            <span>Links</span>
+        </a>
+    </li>
+</ul>

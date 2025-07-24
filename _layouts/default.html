@@ -1,75 +1,101 @@
-<!DOCTYPE HTML>
-<!--
-Linear by TEMPLATED
-templated.co @templatedco
-Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Combinatory Logic</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="/assets/js/skel.min.js"></script>
-	<script src="/assets/js/skel-panels.min.js"></script>
-	<script src="/assets/js/init.js"></script>
-	<noscript>
-		<link rel="stylesheet" href="/assets/css/skel-noscript.css" />
-		<link rel="stylesheet" href="/assets/css/style.css" />
-		<link rel="stylesheet" href="/assets/css/style-desktop.css" />
-	</noscript>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}Combinatory Logic</title>
+    <meta name="description" content="Explore combinatory logic, combinator birds, and tacit programming across different languages like BQN, J, APL, and Haskell.">
+    <meta name="keywords" content="combinatory logic, combinators, tacit programming, BQN, APL, J, Haskell, functional programming">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Modern fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/modern-style.css">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="/" class="nav-logo">
+                        <span class="logo-text">Combinatory Logic</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span class="nav-toggle-icon"></span>
+                </button>
+                
+                <!-- Navigation menu -->
+                <div class="nav-menu" id="nav-menu">
+                    {% include nav.html %}
+                </div>
+            </div>
+        </nav>
+    </header>
 
-	<!-- Header -->
-	<div id="header">
-		{% include nav.html %}
-		<div class="container">
+    <!-- Main content -->
+    <main class="main">
+        {{ content }}
+    </main>
 
-			<!-- Logo -->
-			<div id="logo">
-				<h1><a href="#">Combinatory Logic</a></h1>
-				<!-- <span class="tag">By TEMPLATED</span> -->
-			</div>
-		</div>
-	</div>
-	<!-- Header -->
-	{{ content }}
-	
-	<!-- Tweet -->
-	<div id="tweet">
-		<div class="container">
-			<section>
-				<blockquote>&ldquo;A language that doesn't affect the way you think about programming is not worth knowing.&rdquo; - Alan Perlis</blockquote>
-			</section>
-		</div>
-	</div>
+    <!-- Quote section -->
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="quote">
+                <p>&ldquo;A language that doesn't affect the way you think about programming is not worth knowing.&rdquo;</p>
+                <cite>— Alan Perlis</cite>
+            </blockquote>
+        </div>
+    </section>
 
 
-<!-- Footer -->
-<div id="footer">
-	<div class="container">
-		<section>
-			<!-- <header>
-				<h2>Get in touch</h2>
-				<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
-			</header> -->
-			<ul class="contact">
-				<li><a href="https://twitter.com/code_report" class="fa fa-twitter"><span>Twitter</span></a></li>
-			</ul>
-		</section>
-	</div>
-</div>
 
-<!-- Copyright -->
-<div id="copyright">
-	<div class="container">
-		Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
-		Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a>
-	</div>
-</div>
-
+    <!-- JavaScript for mobile navigation -->
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('nav-menu-open');
+                navToggle.classList.toggle('nav-toggle-active');
+                document.body.classList.toggle('nav-open');
+            });
+            
+            // Close menu when clicking on a link
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('nav-menu-open');
+                    navToggle.classList.remove('nav-toggle-active');
+                    document.body.classList.remove('nav-open');
+                });
+            });
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (navMenu && navToggle && 
+                !navMenu.contains(event.target) && 
+                !navToggle.contains(event.target) && 
+                navMenu.classList.contains('nav-menu-open')) {
+                navMenu.classList.remove('nav-menu-open');
+                navToggle.classList.remove('nav-toggle-active');
+                document.body.classList.remove('nav-open');
+            }
+        });
+    </script>
 </body>
 </html>
