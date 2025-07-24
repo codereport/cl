@@ -1,410 +1,559 @@
----
-title: Combinator Table
-layout: default
----
-
-<!-- Hero Section -->
-<section class="hero">
-    <div class="container">
-        <h1>Combinator Table</h1>
-    </div>
-</section>
-
-<!-- Main Content -->
-<section class="content-section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title" id="birds">Combinators, Birds, Spellings & More</h2>
-        </div>
-
-        <!-- Combinator Table -->
-        <div class="table-container">
-            <table class="modern-table">
-                <thead>
-                    <tr>
-                        <th>Function Abstraction</th>
-                        <th>Symbol</th>
-                        <th>AN⁴</th>
-                        <th>Bird</th>
-                        <th>CR¹</th>
-                        <th>CH²</th>
-                        <th>Elem³</th>
-                        <th>Haskell</th>
-                        <th>APL</th>
-                        <th>BQN</th>
-                        <th>Intro</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><code>λa.a</code></td>
-                        <td><strong>I</strong></td>
-                        <td>-</td>
-                        <td>Identity</td>
-                        <td><code>SKK</code></td>
-                        <td><code>SKK</code></td>
-                        <td>✅</td>
-                        <td><code>id</code></td>
-                        <td><code>⊣⊢</code></td>
-                        <td><code>⊣⊢</code></td>
-                        <td>Sch24</td>
-                    </tr>
-                    <tr>
-                        <td><code>λab.a</code></td>
-                        <td><strong>K</strong></td>
-                        <td>-</td>
-                        <td>Kestrel</td>
-                        <td><code>K</code></td>
-                        <td><code>K</code></td>
-                        <td>✅</td>
-                        <td><code>const</code></td>
-                        <td><code>⊢</code></td>
-                        <td><code>⊢</code></td>
-                        <td>Sch24</td>
-                    </tr>
-                    <tr>
-                        <td><code>λab.b</code></td>
-                        <td><strong>κ</strong></td>
-                        <td>-</td>
-                        <td>Kite</td>
-                        <td><code>KI</code></td>
-                        <td><code>KI</code></td>
-                        <td></td>
-                        <td></td>
-                        <td><code>⊣</code></td>
-                        <td><code>⊣</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><code>λab.abb</code></td>
-                        <td><strong>W</strong></td>
-                        <td>1y2</td>
-                        <td>Warbler</td>
-                        <td><code>C(BMR)</code></td>
-                        <td><code>CSK</code></td>
-                        <td>✅</td>
-                        <td><code>join</code></td>
-                        <td><code>⍨</code></td>
-                        <td><code>˜</code></td>
-                        <td>Cur29</td>
-                    </tr>
-                    <tr>
-                        <td><code>λabc.acb</code></td>
-                        <td><strong>C</strong></td>
-                        <td>2y2</td>
-                        <td>🐦 Cardinal</td>
-                        <td><code>S(BBS)(KK)</code></td>
-                        <td><code>B(ΦBS)KK</code></td>
-                        <td>✅</td>
-                        <td><code>flip</code></td>
-                        <td><code>⍨</code></td>
-                        <td><code>˜</code></td>
-                        <td>Sch24</td>
-                    </tr>
-                    <tr>
-                        <td><code>λabc.a(bc)</code></td>
-                        <td><strong>B</strong></td>
-                        <td>1y11</td>
-                        <td>Bluebird</td>
-                        <td><code>S(KS)K</code></td>
-                        <td><code>S(KS)K</code></td>
-                        <td>✅</td>
-                        <td><code>.</code></td>
-                        <td><code>∘⍤⍥ 2T</code></td>
-                        <td><code>∘○ 2T</code></td>
-                        <td>Sch24</td>
-                    </tr>
-                    <tr>
-                        <td><code>λabcd.a(bcd)</code></td>
-                        <td><strong>B₁</strong></td>
-                        <td>2y12</td>
-                        <td>Blackbird</td>
-                        <td><code>BBB</code></td>
-                        <td><code>DB</code></td>
-                        <td></td>
-                        <td><code>.:</code></td>
-                        <td><code>⍤ 2T</code></td>
-                        <td><code>∘ 2T</code></td>
-                        <td>Cur30</td>
-                    </tr>
-                    <tr>
-                        <td><code>λabcde.a(bcde)</code></td>
-                        <td><strong>B<sub>2</sub></strong></td>
-                        <td>3y13</td>
-                        <td>Bunting</td>
-                        <td><code>B(BBB)B</code></td>
-                        <td><code>DB₁</code></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Cur30</td>
-                    </tr>
-                    <tr>
-                        <td><code>λabcd.a(b(cd))</code></td>
-                        <td><strong>B<sub>3</sub></strong></td>
-                        <td>4y14</td>
-                        <td>Becard</td>
-                        <td><code>B(BB)B</code></td>
-                        <td><code>BDB</code></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Cur30</td>
-                    </tr>
-                    <tr>
-                        <td><code>λabc.ac(bc)</code></td>
-                        <td><strong>S</strong></td>
-                        <td>1y21</td>
-                        <td>Starling</td>
-                        <td><code>S</code></td>
-                        <td><code>S</code></td>
-                        <td></td>
-                        <td><code>&lt;*&gt; / ap</code></td>
-                        <td></td>
-                        <td><code>⟜</code></td>
-                        <td>Sch24</td>
-                    </tr>
-                    <tr>
-                        <td><code>λabc.a(bc)c</code></td>
-                        <td><strong>Σ</strong></td>
-                        <td>1y12</td>
-                        <td>Violet Starling</td>
-                        <td>-</td>
-                        <td>?</td>
-                        <td></td>
-                        <td><code>=&lt;&lt;</code></td>
-                        <td></td>
-                        <td><code>⊸</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><code>λabcd.ab(cd)</code></td>
-                        <td><strong>D</strong></td>
-                        <td>2y21</td>
-                        <td>Dove</td>
-                        <td><code>BB</code></td>
-                        <td><code>BB</code></td>
-                        <td></td>
-                        <td></td>
-                        <td><code>∘</code></td>
-                        <td><code>⟜</code></td>
-                        <td>Smu85</td>
-                    </tr>
-                    <tr>
-                        <td><code>λabcd.a(bc)d</code></td>
-                        <td><strong>Δ</strong></td>
-                        <td>2y12</td>
-                        <td>Zebra Dove</td>
-                        <td>-</td>
-                        <td>?</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><code>⊸</code></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><code>λabcd.a(bd)(cd)</code></td>
-                        <td><strong>Φ</strong></td>
-                        <td>1y121</td>
-                        <td>Phoenix</td>
-                        <td>-</td>
-                        <td><code>B₁SB</code></td>
-                        <td></td>
-                        <td><code>liftA2</code></td>
-                        <td><code>3T</code></td>
-                        <td><code>3T</code></td>
-                        <td>Cur31</td>
-                    </tr>
-                    <tr>
-                        <td><code>λabcd.a(bc)(bd)</code></td>
-                        <td><strong>Ψ</strong></td>
-                        <td>2y21</td>
-                        <td>Psi</td>
-                        <td>-</td>
-                        <td><code>B(SΦCB)B</code></td>
-                        <td></td>
-                        <td><code>on</code></td>
-                        <td><code>⍥</code></td>
-                        <td><code>○</code></td>
-                        <td>Cur31</td>
-                    </tr>
-                    <tr>
-                        <td><code>λabcde.abc(de)</code></td>
-                        <td><strong>D<sub>1</sub></strong></td>
-                        <td>3y31</td>
-                        <td>Dickcissel</td>
-                        <td><code>B(BB)</code></td>
-                        <td><code>BD</code></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><code>λabcde.a(bc)(de)</code></td>
-                        <td><strong>D<sub>2</sub></strong></td>
-                        <td>2y211</td>
-                        <td>Dovekie</td>
-                        <td><code>BB(BB)</code></td>
-                        <td><code>DD</code></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Smu85</td>
-                    </tr>
-                    <tr>
-                        <td><code>λabcde.ab(cde)</code></td>
-                        <td><strong>E</strong></td>
-                        <td>3y22</td>
-                        <td>🦅 Eagle</td>
-                        <td><code>B(BBB)</code></td>
-                        <td><code>BB₁</code></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Smu85</td>
-                    </tr>
-                    <tr>
-                        <td><code>λabcde.a(bcd)e</code></td>
-                        <td><strong>ε</strong></td>
-                        <td>3y22</td>
-                        <td>Golden Eagle</td>
-                        <td>-</td>
-                        <td>?</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><code>λabcde.a(bde)(cde)</code></td>
-                        <td><strong>Φ<sub>1</sub></strong></td>
-                        <td>2y222</td>
-                        <td>Pheasant</td>
-                        <td>-</td>
-                        <td><code>BΦΦ</code></td>
-                        <td></td>
-                        <td></td>
-                        <td><code>3T</code></td>
-                        <td><code>3T</code></td>
-                        <td>Cur31</td>
-                    </tr>
-                    <tr>
-                        <td><code>λabcdefg.a(bcd)(efg)</code></td>
-                        <td><strong>Ê</strong></td>
-                        <td>4y222</td>
-                        <td>Bald Eagle</td>
-                        <td><code>B(BBB)(B(BBB))</code></td>
-                        <td><code>D₂D₂D</code></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>Smu85</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Reference Notes -->
-        <div class="card" style="margin-top: 3rem;">
-            <h3>Reference Notes</h3>
-            <div style="font-size: 0.9rem; line-height: 1.6;">
-                <p><strong>1 - CR:</strong> Chris Rathman (combinator spellings taken from <a href="https://www.angelfire.com/tx4/cus/combinator/birds.html" target="_blank">his site</a>)</p>
-                <p><strong>2 - CH:</strong> Conor Hoekstra (combinator spellings generated from <a href="https://github.com/codereport/cl-cpp" target="_blank">C++ program</a>)</p>
-                <p><strong>3 - Elementary combinators:</strong> Listed in Chapter 5 of Combinatory Logic: Volume I</p>
-                <p><strong>4 - Arity Notation:</strong> AyBC = An A-arity yielding binary function (because BC is length two) where the arguments of the function have arity B and C</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinator Table - Combinatory Logic</title>
+    <meta name="description" content="Explore combinatory logic, combinator birds, and tacit programming across different languages like BQN, J, APL, and Haskell.">
+    <meta name="keywords" content="combinatory logic, combinators, tacit programming, BQN, APL, J, Haskell, functional programming">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Modern fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/modern-style.css">
+    
+    <!-- Early theme detection to prevent FOUC -->
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="/" class="nav-logo">
+                        <span class="logo-text">Combinatory Logic</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span class="nav-toggle-icon"></span>
+                </button>
+                
+                <!-- Navigation menu -->
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">
+                                <i class="fas fa-home nav-icon"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/table.html" class="nav-link nav-link-active">
+                                <i class="fas fa-table nav-icon"></i>
+                                <span>Table</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/links.html" class="nav-link">
+                                <i class="fas fa-link nav-icon"></i>
+                                <span>Links</span>
+                            </a>
+                        </li>
+                        <li class="nav-item theme-toggle-container">
+                            <div class="theme-toggle-wrapper">
+                                <input type="checkbox" id="theme-toggle" class="theme-toggle-input" aria-label="Toggle dark mode">
+                                <label for="theme-toggle" class="theme-toggle-label">
+                                    <span class="theme-toggle-slider">
+                                        <i class="fas fa-sun theme-toggle-icon theme-toggle-icon-light"></i>
+                                        <i class="fas fa-moon theme-toggle-icon theme-toggle-icon-dark"></i>
+                                    </span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </nav>
+    </header>
 
-        <!-- Historical References -->
-        <div class="section-header" style="margin-top: 4rem;">
-            <h2 class="section-title">Historical References</h2>
-            <p class="section-subtitle">
-                Key papers and publications in the development of combinatory logic
-            </p>
-        </div>
+    <!-- Main content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Combinator Table</h1>
+            </div>
+        </section>
 
-        <div class="table-container">
-            <table class="modern-table">
-                <thead>
-                    <tr>
-                        <th>Code</th>
-                        <th>Author</th>
-                        <th>Year</th>
-                        <th>Paper</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Sch24</strong></td>
-                        <td>Moses Schönfinkel</td>
-                        <td>1924</td>
-                        <td>On the building blocks of mathematical logic</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cur29</strong></td>
-                        <td>Haskell Curry</td>
-                        <td>1929</td>
-                        <td>An Analysis of Logical Substitution</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cur30</strong></td>
-                        <td>Haskell Curry</td>
-                        <td>1931</td>
-                        <td>Grundlagen der Kombinatorischen Logik (The Foundations of Combinatory Logic)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cur31</strong></td>
-                        <td>Haskell Curry</td>
-                        <td>1931</td>
-                        <td>The universal quantifier in combinatory logic</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cur48</strong></td>
-                        <td>Haskell Curry</td>
-                        <td>1948</td>
-                        <td>A Simplification of the Theory of Combinators</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cur58</strong></td>
-                        <td>H. Curry & R. Feys</td>
-                        <td>1958</td>
-                        <td>Combinatory Logic: Volume I</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Tur78</strong></td>
-                        <td>David Turner</td>
-                        <td>1979</td>
-                        <td>Another algorithm for bracket abstraction</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Smu85</strong></td>
-                        <td>Raymond Smullyan</td>
-                        <td>1985</td>
-                        <td>To Mock a Mockingbird</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Iv89</strong></td>
-                        <td>K. Iverson & E. McDonnell</td>
-                        <td>1989</td>
-                        <td>Phrasal Forms</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Loc12</strong></td>
-                        <td>Marshall Lochbaum</td>
-                        <td>2012</td>
-                        <td>Added hook, backhook</td>
-                    </tr>
-                </tbody>
-            </table>
+        <!-- Main Content -->
+        <section class="content-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" id="birds">Combinators, Birds, Spellings & More</h2>
+                </div>
+
+                <!-- Combinator Table -->
+                <div class="table-container">
+                    <table class="modern-table">
+                        <thead>
+                            <tr>
+                                <th>Function Abstraction</th>
+                                <th>Symbol</th>
+                                <th>AN⁴</th>
+                                <th>Bird</th>
+                                <th>CR¹</th>
+                                <th>CH²</th>
+                                <th>Elem³</th>
+                                <th>Haskell</th>
+                                <th>APL</th>
+                                <th>BQN</th>
+                                <th>Intro</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>λa.a</code></td>
+                                <td><strong>I</strong></td>
+                                <td>-</td>
+                                <td>Identity</td>
+                                <td><code>SKK</code></td>
+                                <td><code>SKK</code></td>
+                                <td>✅</td>
+                                <td><code>id</code></td>
+                                <td><code>⊣⊢</code></td>
+                                <td><code>⊣⊢</code></td>
+                                <td>Sch24</td>
+                            </tr>
+                            <tr>
+                                <td><code>λab.a</code></td>
+                                <td><strong>K</strong></td>
+                                <td>-</td>
+                                <td>Kestrel</td>
+                                <td><code>K</code></td>
+                                <td><code>K</code></td>
+                                <td>✅</td>
+                                <td><code>const</code></td>
+                                <td><code>⊢</code></td>
+                                <td><code>⊢</code></td>
+                                <td>Sch24</td>
+                            </tr>
+                            <tr>
+                                <td><code>λab.b</code></td>
+                                <td><strong>κ</strong></td>
+                                <td>-</td>
+                                <td>Kite</td>
+                                <td><code>KI</code></td>
+                                <td><code>KI</code></td>
+                                <td></td>
+                                <td></td>
+                                <td><code>⊣</code></td>
+                                <td><code>⊣</code></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>λab.abb</code></td>
+                                <td><strong>W</strong></td>
+                                <td>1y2</td>
+                                <td>Warbler</td>
+                                <td><code>C(BMR)</code></td>
+                                <td><code>CSK</code></td>
+                                <td>✅</td>
+                                <td><code>join</code></td>
+                                <td><code>⍨</code></td>
+                                <td><code>˜</code></td>
+                                <td>Cur29</td>
+                            </tr>
+                            <tr>
+                                <td><code>λabc.acb</code></td>
+                                <td><strong>C</strong></td>
+                                <td>2y2</td>
+                                <td>🐦 Cardinal</td>
+                                <td><code>S(BBS)(KK)</code></td>
+                                <td><code>B(ΦBS)KK</code></td>
+                                <td>✅</td>
+                                <td><code>flip</code></td>
+                                <td><code>⍨</code></td>
+                                <td><code>˜</code></td>
+                                <td>Sch24</td>
+                            </tr>
+                            <tr>
+                                <td><code>λabc.a(bc)</code></td>
+                                <td><strong>B</strong></td>
+                                <td>1y11</td>
+                                <td>Bluebird</td>
+                                <td><code>S(KS)K</code></td>
+                                <td><code>S(KS)K</code></td>
+                                <td>✅</td>
+                                <td><code>.</code></td>
+                                <td><code>∘⍤⍥ 2T</code></td>
+                                <td><code>∘○ 2T</code></td>
+                                <td>Sch24</td>
+                            </tr>
+                            <tr>
+                                <td><code>λabcd.a(bcd)</code></td>
+                                <td><strong>B₁</strong></td>
+                                <td>2y12</td>
+                                <td>Blackbird</td>
+                                <td><code>BBB</code></td>
+                                <td><code>DB</code></td>
+                                <td></td>
+                                <td><code>.:</code></td>
+                                <td><code>⍤ 2T</code></td>
+                                <td><code>∘ 2T</code></td>
+                                <td>Cur30</td>
+                            </tr>
+                            <tr>
+                                <td><code>λabcde.a(bcde)</code></td>
+                                <td><strong>B<sub>2</sub></strong></td>
+                                <td>3y13</td>
+                                <td>Bunting</td>
+                                <td><code>B(BBB)B</code></td>
+                                <td><code>DB₁</code></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Cur30</td>
+                            </tr>
+                            <tr>
+                                <td><code>λabcd.a(b(cd))</code></td>
+                                <td><strong>B<sub>3</sub></strong></td>
+                                <td>4y14</td>
+                                <td>Becard</td>
+                                <td><code>B(BB)B</code></td>
+                                <td><code>BDB</code></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Cur30</td>
+                            </tr>
+                            <tr>
+                                <td><code>λabc.ac(bc)</code></td>
+                                <td><strong>S</strong></td>
+                                <td>1y21</td>
+                                <td>Starling</td>
+                                <td><code>S</code></td>
+                                <td><code>S</code></td>
+                                <td></td>
+                                <td><code>&lt;*&gt; / ap</code></td>
+                                <td></td>
+                                <td><code>⟜</code></td>
+                                <td>Sch24</td>
+                            </tr>
+                            <tr>
+                                <td><code>λabc.a(bc)c</code></td>
+                                <td><strong>Σ</strong></td>
+                                <td>1y12</td>
+                                <td>Violet Starling</td>
+                                <td>-</td>
+                                <td>?</td>
+                                <td></td>
+                                <td><code>=&lt;&lt;</code></td>
+                                <td></td>
+                                <td><code>⊸</code></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>λabcd.ab(cd)</code></td>
+                                <td><strong>D</strong></td>
+                                <td>2y21</td>
+                                <td>Dove</td>
+                                <td><code>BB</code></td>
+                                <td><code>BB</code></td>
+                                <td></td>
+                                <td></td>
+                                <td><code>∘</code></td>
+                                <td><code>⟜</code></td>
+                                <td>Smu85</td>
+                            </tr>
+                            <tr>
+                                <td><code>λabcd.a(bc)d</code></td>
+                                <td><strong>Δ</strong></td>
+                                <td>2y12</td>
+                                <td>Zebra Dove</td>
+                                <td>-</td>
+                                <td>?</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><code>⊸</code></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>λabcd.a(bd)(cd)</code></td>
+                                <td><strong>Φ</strong></td>
+                                <td>1y121</td>
+                                <td>Phoenix</td>
+                                <td>-</td>
+                                <td><code>B₁SB</code></td>
+                                <td></td>
+                                <td><code>liftA2</code></td>
+                                <td><code>3T</code></td>
+                                <td><code>3T</code></td>
+                                <td>Cur31</td>
+                            </tr>
+                            <tr>
+                                <td><code>λabcd.a(bc)(bd)</code></td>
+                                <td><strong>Ψ</strong></td>
+                                <td>2y21</td>
+                                <td>Psi</td>
+                                <td>-</td>
+                                <td><code>B(SΦCB)B</code></td>
+                                <td></td>
+                                <td><code>on</code></td>
+                                <td><code>⍥</code></td>
+                                <td><code>○</code></td>
+                                <td>Cur31</td>
+                            </tr>
+                            <tr>
+                                <td><code>λabcde.abc(de)</code></td>
+                                <td><strong>D<sub>1</sub></strong></td>
+                                <td>3y31</td>
+                                <td>Dickcissel</td>
+                                <td><code>B(BB)</code></td>
+                                <td><code>BD</code></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>λabcde.a(bc)(de)</code></td>
+                                <td><strong>D<sub>2</sub></strong></td>
+                                <td>2y211</td>
+                                <td>Dovekie</td>
+                                <td><code>BB(BB)</code></td>
+                                <td><code>DD</code></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Smu85</td>
+                            </tr>
+                            <tr>
+                                <td><code>λabcde.ab(cde)</code></td>
+                                <td><strong>E</strong></td>
+                                <td>3y22</td>
+                                <td>🦅 Eagle</td>
+                                <td><code>B(BBB)</code></td>
+                                <td><code>BB₁</code></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Smu85</td>
+                            </tr>
+                            <tr>
+                                <td><code>λabcde.a(bcd)e</code></td>
+                                <td><strong>ε</strong></td>
+                                <td>3y22</td>
+                                <td>Golden Eagle</td>
+                                <td>-</td>
+                                <td>?</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><code>λabcde.a(bde)(cde)</code></td>
+                                <td><strong>Φ<sub>1</sub></strong></td>
+                                <td>2y222</td>
+                                <td>Pheasant</td>
+                                <td>-</td>
+                                <td><code>BΦΦ</code></td>
+                                <td></td>
+                                <td></td>
+                                <td><code>3T</code></td>
+                                <td><code>3T</code></td>
+                                <td>Cur31</td>
+                            </tr>
+                            <tr>
+                                <td><code>λabcdefg.a(bcd)(efg)</code></td>
+                                <td><strong>Ê</strong></td>
+                                <td>4y222</td>
+                                <td>Bald Eagle</td>
+                                <td><code>B(BBB)(B(BBB))</code></td>
+                                <td><code>D₂D₂D</code></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Smu85</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Reference Notes -->
+                <div class="card" style="margin-top: 3rem;">
+                    <h3>Reference Notes</h3>
+                    <div style="font-size: 0.9rem; line-height: 1.6;">
+                        <p><strong>1 - CR:</strong> Chris Rathman (combinator spellings taken from <a href="https://www.angelfire.com/tx4/cus/combinator/birds.html" target="_blank">his site</a>)</p>
+                        <p><strong>2 - CH:</strong> Conor Hoekstra (combinator spellings generated from <a href="https://github.com/codereport/cl-cpp" target="_blank">C++ program</a>)</p>
+                        <p><strong>3 - Elementary combinators:</strong> Listed in Chapter 5 of Combinatory Logic: Volume I</p>
+                        <p><strong>4 - Arity Notation:</strong> AyBC = An A-arity yielding binary function (because BC is length two) where the arguments of the function have arity B and C</p>
+                    </div>
+                </div>
+
+                <!-- Historical References -->
+                <div class="section-header" style="margin-top: 4rem;">
+                    <h2 class="section-title">Historical References</h2>
+                    <p class="section-subtitle">
+                        Key papers and publications in the development of combinatory logic
+                    </p>
+                </div>
+
+                <div class="table-container">
+                    <table class="modern-table">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Author</th>
+                                <th>Year</th>
+                                <th>Paper</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Sch24</strong></td>
+                                <td>Moses Schönfinkel</td>
+                                <td>1924</td>
+                                <td>On the building blocks of mathematical logic</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cur29</strong></td>
+                                <td>Haskell Curry</td>
+                                <td>1929</td>
+                                <td>An Analysis of Logical Substitution</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cur30</strong></td>
+                                <td>Haskell Curry</td>
+                                <td>1931</td>
+                                <td>Grundlagen der Kombinatorischen Logik (The Foundations of Combinatory Logic)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cur31</strong></td>
+                                <td>Haskell Curry</td>
+                                <td>1931</td>
+                                <td>The universal quantifier in combinatory logic</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cur48</strong></td>
+                                <td>Haskell Curry</td>
+                                <td>1948</td>
+                                <td>A Simplification of the Theory of Combinators</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cur58</strong></td>
+                                <td>H. Curry & R. Feys</td>
+                                <td>1958</td>
+                                <td>Combinatory Logic: Volume I</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tur78</strong></td>
+                                <td>David Turner</td>
+                                <td>1979</td>
+                                <td>Another algorithm for bracket abstraction</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Smu85</strong></td>
+                                <td>Raymond Smullyan</td>
+                                <td>1985</td>
+                                <td>To Mock a Mockingbird</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Iv89</strong></td>
+                                <td>K. Iverson & E. McDonnell</td>
+                                <td>1989</td>
+                                <td>Phrasal Forms</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Loc12</strong></td>
+                                <td>Marshall Lochbaum</td>
+                                <td>2012</td>
+                                <td>Added hook, backhook</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Quote section -->
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="quote">
+                <p>&ldquo;A language that doesn't affect the way you think about programming is not worth knowing.&rdquo;</p>
+                <cite>— Alan Perlis</cite>
+            </blockquote>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- JavaScript for mobile navigation and dark mode -->
+    <script>
+        // Dark mode functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        // Get current theme (already set by early script)
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+        
+        // Initialize toggle slider
+        if (themeToggle) {
+            themeToggle.checked = currentTheme === 'dark';
+            
+            // Theme toggle event listener
+            themeToggle.addEventListener('change', function() {
+                const newTheme = this.checked ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+            });
+        }
+
+        // Mobile navigation toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('nav-menu-open');
+                navToggle.classList.toggle('nav-toggle-active');
+                document.body.classList.toggle('nav-open');
+            });
+            
+            // Close menu when clicking on a link
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('nav-menu-open');
+                    navToggle.classList.remove('nav-toggle-active');
+                    document.body.classList.remove('nav-open');
+                });
+            });
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (navMenu && navToggle && 
+                !navMenu.contains(event.target) && 
+                !navToggle.contains(event.target) && 
+                navMenu.classList.contains('nav-menu-open')) {
+                navMenu.classList.remove('nav-menu-open');
+                navToggle.classList.remove('nav-toggle-active');
+                document.body.classList.remove('nav-open');
+            }
+        });
+    </script>
+</body>
+</html>
