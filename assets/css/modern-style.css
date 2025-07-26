@@ -66,19 +66,41 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     line-height: 1.2;
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 1rem;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.125rem; }
-h6 { font-size: 1rem; }
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+h5 {
+    font-size: 1.125rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
 
 p {
     margin-bottom: 1rem;
@@ -101,7 +123,6 @@ code {
 
 blockquote {
     background: var(--bg-secondary);
-    border-left: 4px solid var(--accent-primary);
     margin: 2rem 0;
     padding: 1.5rem;
     font-style: italic;
@@ -301,7 +322,7 @@ blockquote {
     position: relative;
 }
 
-.theme-toggle-input:checked + .theme-toggle-label {
+.theme-toggle-input:checked+.theme-toggle-label {
     background: var(--accent-primary);
 }
 
@@ -319,7 +340,7 @@ blockquote {
     justify-content: center;
 }
 
-.theme-toggle-input:checked + .theme-toggle-label .theme-toggle-slider {
+.theme-toggle-input:checked+.theme-toggle-label .theme-toggle-slider {
     transform: translateX(30px);
 }
 
@@ -339,16 +360,16 @@ blockquote {
     opacity: 0;
 }
 
-.theme-toggle-input:checked + .theme-toggle-label .theme-toggle-icon-light {
+.theme-toggle-input:checked+.theme-toggle-label .theme-toggle-icon-light {
     opacity: 0;
 }
 
-.theme-toggle-input:checked + .theme-toggle-label .theme-toggle-icon-dark {
+.theme-toggle-input:checked+.theme-toggle-label .theme-toggle-icon-dark {
     opacity: 1;
 }
 
 /* Focus styles for accessibility */
-.theme-toggle-input:focus + .theme-toggle-label {
+.theme-toggle-input:focus+.theme-toggle-label {
     outline: 2px solid var(--accent-primary);
     outline-offset: 2px;
 }
@@ -358,7 +379,7 @@ blockquote {
     .nav-toggle {
         display: none;
     }
-    
+
     .nav-menu {
         position: static;
         height: auto;
@@ -367,29 +388,29 @@ blockquote {
         box-shadow: none;
         width: auto;
     }
-    
+
     .nav-list {
         display: flex;
         padding: 0;
         gap: 0.5rem;
         align-items: center;
     }
-    
+
     .nav-link {
         padding: 0.75rem 1rem;
         border-radius: 0.5rem;
         border-left: none;
     }
-    
+
     .nav-link-active {
         background: var(--bg-tertiary);
         border-radius: 0.5rem;
     }
-    
+
     .nav-icon {
         display: none;
     }
-    
+
     /* Desktop theme toggle adjustments */
     .theme-toggle-container {
         padding: 0.5rem;
@@ -543,12 +564,12 @@ blockquote {
     .table-container {
         font-size: 0.75rem;
     }
-    
+
     .modern-table th,
     .modern-table td {
         padding: 0.5rem 0.25rem;
     }
-    
+
     .modern-table th:not(:first-child),
     .modern-table td:not(:first-child) {
         min-width: 80px;
@@ -580,12 +601,12 @@ blockquote {
     font-weight: 500;
 }
 
-.links-list > li > ul > li {
+.links-list>li>ul>li {
     font-weight: 600;
     color: var(--text-secondary);
 }
 
-.links-list > li > ul > li > ul > li {
+.links-list>li>ul>li>ul>li {
     font-weight: 500;
     color: var(--text-tertiary);
 }
@@ -668,9 +689,17 @@ blockquote {
 }
 
 /* Utility Classes */
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.text-right { text-align: right; }
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
 
 .font-mono {
     font-family: 'JetBrains Mono', 'Fira Code', monospace;
@@ -690,8 +719,15 @@ blockquote {
 
 /* Animations */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .fade-in {
@@ -705,17 +741,18 @@ blockquote {
 
 /* Print styles */
 @media print {
+
     .header,
     .footer,
     .quote-section,
     .nav-toggle {
         display: none;
     }
-    
+
     .main {
         margin: 0;
     }
-    
+
     .card {
         break-inside: avoid;
     }
@@ -726,7 +763,7 @@ blockquote {
     .card {
         border: 2px solid #000;
     }
-    
+
     .nav-link:focus,
     .social-link:focus {
         outline: 3px solid #000;
@@ -736,6 +773,7 @@ blockquote {
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -744,4 +782,4 @@ blockquote {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-} 
+}
