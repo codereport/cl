@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combinatory Logic</title>
-    <meta name="description" content="Explore combinatory logic, combinator birds, and tacit programming across different languages like BQN, J, APL, and Haskell.">
-    <meta name="keywords" content="combinatory logic, combinators, tacit programming, BQN, APL, J, Haskell, functional programming">
-    
+    <meta name="description"
+        content="Explore combinatory logic, combinator birds, and tacit programming across different languages like BQN, J, APL, and Haskell.">
+    <meta name="keywords"
+        content="combinatory logic, combinators, tacit programming, BQN, APL, J, Haskell, functional programming">
+
     <!-- Preconnect to external domains for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <!-- Modern fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/css/modern-style.css">
-    
+
     <!-- Early theme detection to prevent FOUC -->
     <script>
-        (function() {
+        (function () {
             const savedTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
         })();
     </script>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
         <nav class="nav">
             <div class="nav-container">
 
-                
+
                 <!-- Mobile menu button -->
                 <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                     <span class="nav-toggle-icon"></span>
                 </button>
-                
+
                 <!-- Navigation menu -->
                 <div class="nav-menu" id="nav-menu">
                     <ul class="nav-list">
@@ -63,7 +69,8 @@
                         </li>
                         <li class="nav-item theme-toggle-container">
                             <div class="theme-toggle-wrapper">
-                                <input type="checkbox" id="theme-toggle" class="theme-toggle-input" aria-label="Toggle dark mode">
+                                <input type="checkbox" id="theme-toggle" class="theme-toggle-input"
+                                    aria-label="Toggle dark mode">
                                 <label for="theme-toggle" class="theme-toggle-label">
                                     <span class="theme-toggle-slider">
                                         <i class="fas fa-sun theme-toggle-icon theme-toggle-icon-light"></i>
@@ -92,30 +99,42 @@
             <div class="container">
                 <div class="card">
                     <p>
-                        <strong>A notation? A rephrasing of the lambda calculus? A logical theory? A theory for the foundation of
-                        mathematics? A computer programming language?</strong> Depending on the resource that you check you will get a
-                        different definition. One of the best definitions (in the author's opinion) is from the HaskellWiki:
+                        <strong>A notation? A rephrasing of the lambda calculus? A logical theory? A theory for the
+                            foundation of
+                            mathematics? A computer programming language?</strong> Depending on the resource that you
+                        check you will get a
+                        different definition. One of the best definitions (in the author's opinion) is from the
+                        HaskellWiki:
                     </p>
 
-                    <blockquote style="margin: 2rem 0; padding: 1.5rem; background: #f7fafc; border-left: 4px solid #3182ce; font-style: italic; color: #2d3748;">
-                        "Combinatory logic was developed as a theory for the foundation of mathematics... its goal was ... to
+                    <blockquote
+                        style="margin: 2rem 0; padding: 1.5rem; background: #f7fafc; border-left: 4px solid #3182ce; font-style: italic; color: #2d3748;">
+                        "Combinatory logic was developed as a theory for the foundation of mathematics... its goal was
+                        ... to
                         establish fundamental mathematical concepts on simpler and cleaner principles than the existing
                         mathematical frameworks... Its 'lack of (bound) variables' relates combinatory logic to the
                         pointfree style of programming."
                     </blockquote>
 
                     <p>
-                        The best programming languages for programming with combinators are array languages like <strong>BQN</strong>, <strong>J</strong> and <strong>APL</strong>.
-                        Ken Iverson first introduced the S and Φ combinators as the "hook" and "fork" in the J language in the
-                        early 1990s. Dyalog APL would then later add combinators in Dyalog 14.0 in 2014. The newest array
-                        language BQN has the strongest support for combinator programming of all the array languages. More
+                        The best programming languages for programming with combinators are array languages like
+                        <strong>BQN</strong>, <strong>J</strong> and <strong>APL</strong>.
+                        Ken Iverson first introduced the S and Φ combinators as the "hook" and "fork" in the J language
+                        in the
+                        early 1990s. Dyalog APL would then later add combinators in Dyalog 14.0 in 2014. The newest
+                        array
+                        language BQN has the strongest support for combinator programming of all the array languages.
+                        More
                         details of combinators as they exist in array languages can be found <a
-                            href="https://web.archive.org/web/20220617020347id_/https://dl.acm.org/doi/pdf/10.1145/3520306.3534504" target="_blank">here</a>.
+                            href="https://web.archive.org/web/20220617020347id_/https://dl.acm.org/doi/pdf/10.1145/3520306.3534504"
+                            target="_blank">here</a>.
                     </p>
 
                     <p>
-                        If you are interested in learning more, a great starting point are the <strong>Composition Intuition</strong> and 
-                        <strong>Composition Intuition II</strong> talks that were presented at CppNorth 2023 and 2024 respectively ⬇️
+                        If you are interested in learning more, a great starting point are the <strong>Composition
+                            Intuition</strong> and
+                        <strong>Composition Intuition II</strong> talks that were presented at CppNorth 2023 and 2024
+                        respectively ⬇️
                     </p>
                 </div>
 
@@ -124,10 +143,10 @@
                 <div class="videos-grid">
                     <div class="card">
                         <h3>Composition Intuition (2023)</h3>
-                        <p>An introduction to combinatory logic and functional composition presented at CppNorth 2023.</p>
+                        <p>An introduction to combinatory logic and functional composition presented at CppNorth 2023.
+                        </p>
                         <div class="video-container">
-                            <iframe 
-                                src="https://www.youtube.com/embed/JELcdZLre3s?si=JGMoUPPNc6u8EQta"
+                            <iframe src="https://www.youtube.com/embed/JELcdZLre3s?si=JGMoUPPNc6u8EQta"
                                 title="Composition Intuition - CppNorth 2023"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen>
@@ -137,27 +156,18 @@
 
                     <div class="card">
                         <h3>Composition Intuition II (2024)</h3>
-                        <p>Building on the foundations, this follow-up talk dives deeper into advanced combinatory concepts.</p>
+                        <p>Building on the foundations, this follow-up talk dives deeper into advanced combinatory
+                            concepts.</p>
                         <div class="video-container">
-                            <iframe 
-                                src="https://www.youtube.com/embed/Tsa5JK4nnQE?si=VB6rrkhoh_73dPSb"
+                            <iframe src="https://www.youtube.com/embed/Tsa5JK4nnQE?si=VB6rrkhoh_73dPSb"
                                 title="Composition Intuition II - CppNorth 2024"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                referrerpolicy="strict-origin-when-cross-origin" 
-                                allowfullscreen>
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                             </iframe>
                         </div>
                     </div>
                 </div>
 
-                <div class="card text-center" style="margin-top: 3rem;">
-                    <h3>Ready to Explore?</h3>
-                    <p>
-                        Dive into our comprehensive <a href="/table.html" style="font-weight: 600;">combinator reference table</a> 
-                        or explore our curated <a href="/links.html" style="font-weight: 600;">collection of resources</a> 
-                        to deepen your understanding of combinatory logic.
-                    </p>
-                </div>
             </div>
         </section>
     </main>
@@ -166,7 +176,8 @@
     <section class="quote-section">
         <div class="container">
             <blockquote class="quote">
-                <p>&ldquo;A language that doesn't affect the way you think about programming is not worth knowing.&rdquo;</p>
+                <p>&ldquo;A language that doesn't affect the way you think about programming is not worth
+                    knowing.&rdquo;</p>
                 <cite>— Alan Perlis</cite>
             </blockquote>
         </div>
@@ -176,16 +187,16 @@
     <script>
         // Dark mode functionality
         const themeToggle = document.getElementById('theme-toggle');
-        
+
         // Get current theme (already set by early script)
         const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-        
+
         // Initialize toggle slider
         if (themeToggle) {
             themeToggle.checked = currentTheme === 'dark';
-            
+
             // Theme toggle event listener
-            themeToggle.addEventListener('change', function() {
+            themeToggle.addEventListener('change', function () {
                 const newTheme = this.checked ? 'dark' : 'light';
                 document.documentElement.setAttribute('data-theme', newTheme);
                 localStorage.setItem('theme', newTheme);
@@ -195,14 +206,14 @@
         // Mobile navigation toggle
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
-        
+
         if (navToggle && navMenu) {
-            navToggle.addEventListener('click', function() {
+            navToggle.addEventListener('click', function () {
                 navMenu.classList.toggle('nav-menu-open');
                 navToggle.classList.toggle('nav-toggle-active');
                 document.body.classList.toggle('nav-open');
             });
-            
+
             // Close menu when clicking on a link
             const navLinks = navMenu.querySelectorAll('a');
             navLinks.forEach(link => {
@@ -213,12 +224,12 @@
                 });
             });
         }
-        
+
         // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            if (navMenu && navToggle && 
-                !navMenu.contains(event.target) && 
-                !navToggle.contains(event.target) && 
+        document.addEventListener('click', function (event) {
+            if (navMenu && navToggle &&
+                !navMenu.contains(event.target) &&
+                !navToggle.contains(event.target) &&
                 navMenu.classList.contains('nav-menu-open')) {
                 navMenu.classList.remove('nav-menu-open');
                 navToggle.classList.remove('nav-toggle-active');
@@ -227,4 +238,5 @@
         });
     </script>
 </body>
+
 </html>
