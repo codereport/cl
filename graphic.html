@@ -43,7 +43,7 @@
     <main class="main">
         <section class="hero">
             <div class="container">
-                <h1>Combinators Graphic</h1>
+                <h1>Combinator Graphic</h1>
             </div>
         </section>
 
@@ -251,6 +251,15 @@
                     index += 1;
                 }, 2000);
             }, 2000);
+        });
+
+        // Arrow key navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                window.location.href = '/table.html';
+            } else if (event.key === 'ArrowRight') {
+                window.location.href = '/links.html';
+            }
         });
     </script>
 </body>

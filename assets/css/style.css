@@ -121,7 +121,6 @@ blockquote {
 /* Header & Navigation */
 .header {
     background: var(--bg-primary);
-    border-bottom: 1px solid var(--border-subtle);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -138,7 +137,7 @@ blockquote {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 4rem;
+    height: 3rem;
 }
 
 .nav-toggle {
@@ -289,9 +288,8 @@ blockquote {
 
 /* Hero Section */
 .hero {
-    padding: 4rem 0 3rem;
+    padding: 2rem 0 1.5rem;
     text-align: center;
-    border-bottom: 1px solid var(--border-subtle);
 }
 
 .hero h1 {
@@ -302,7 +300,7 @@ blockquote {
 
 /* Content Sections */
 .content-section {
-    padding: 3rem 0;
+    padding: 0.5rem 0 3rem;
 }
 
 .section-header {
@@ -322,7 +320,6 @@ blockquote {
     border-radius: 0.5rem;
     padding: 2rem;
     margin-bottom: 2rem;
-    border: 1px solid var(--border-subtle);
 }
 
 .card h3 {

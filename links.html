@@ -179,6 +179,15 @@
                 navToggle.classList.remove('nav-toggle-active');
             }
         });
+
+        // Arrow key navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                window.location.href = '/graphic.html';
+            } else if (event.key === 'ArrowRight') {
+                window.location.href = '/';
+            }
+        });
     </script>
 </body>
 </html>
