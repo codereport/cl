@@ -484,12 +484,25 @@ blockquote {
     text-align: center;
 }
 
+.quote-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .quote {
-    max-width: 700px;
+    max-width: 900px;
+    width: 100%;
     margin: 0 auto;
     background: transparent;
-    border: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
     padding: 0;
+    display: block;
+    text-align: center;
 }
 
 .quote p {
@@ -497,13 +510,19 @@ blockquote {
     font-style: italic;
     margin-bottom: 1rem;
     color: var(--text-secondary);
-    white-space: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .quote cite {
     font-size: 1rem;
     font-style: normal;
     color: var(--text-muted);
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Combinator Graphic Table */
