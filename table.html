@@ -11,6 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- Prefetch all pages for instant navigation -->
+    <link rel="prefetch" href="/">
+    <link rel="prefetch" href="/graphic.html">
+    <link rel="prefetch" href="/links.html">
 </head>
 <body>
     <header class="header">
@@ -377,43 +382,6 @@
         </div>
     </section>
 
-    <script>
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
-
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('nav-menu-open');
-                navToggle.classList.toggle('nav-toggle-active');
-            });
-
-            const navLinks = navMenu.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.remove('nav-menu-open');
-                    navToggle.classList.remove('nav-toggle-active');
-                });
-            });
-        }
-
-        document.addEventListener('click', function(event) {
-            if (navMenu && navToggle &&
-                !navMenu.contains(event.target) &&
-                !navToggle.contains(event.target) &&
-                navMenu.classList.contains('nav-menu-open')) {
-                navMenu.classList.remove('nav-menu-open');
-                navToggle.classList.remove('nav-toggle-active');
-            }
-        });
-
-        // Arrow key navigation
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'ArrowLeft') {
-                window.location.href = '/';
-            } else if (event.key === 'ArrowRight') {
-                window.location.href = '/graphic.html';
-            }
-        });
-    </script>
+    <script src="/assets/js/nav.js"></script>
 </body>
 </html>
