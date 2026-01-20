@@ -252,12 +252,16 @@ blockquote {
         background: none;
         transform: none;
         border-right: none;
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 
     .nav-list {
         display: flex;
         padding: 0;
         gap: 0.5rem;
+        justify-content: center;
     }
 
     .nav-link {
