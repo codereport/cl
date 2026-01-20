@@ -57,6 +57,7 @@ html {
 
 body {
     font-family: "Linux Libertine", "Times New Roman", Georgia, serif;
+    font-size: 20px;
     line-height: 1.6;
     color: var(--text-secondary);
     background-color: var(--bg-primary);
@@ -370,7 +371,7 @@ blockquote {
 .modern-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.95rem;
+    font-size: 20px;
     line-height: 1.5;
 }
 
@@ -409,29 +410,30 @@ blockquote {
 }
 
 .links-list {
-    font-size: 1rem;
-    line-height: 1.9;
+    font-size: 20px;
+    line-height: 1.4;
 }
 
 .links-list ul {
-    list-style: none;
+    list-style: disc;
     margin-left: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .links-list > ul {
     margin-left: 0;
+    list-style: none;
 }
 
 .links-list li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .links-list > ul > li {
     font-weight: 600;
     color: var(--text-primary);
-    margin-top: 1.5rem;
-    margin-bottom: 0.75rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .links-list > ul > li:first-child {
@@ -441,7 +443,7 @@ blockquote {
 .links-list > ul > li > ul > li {
     font-weight: 600;
     color: var(--text-secondary);
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 }
 
 .links-list > ul > li > ul > li > ul > li {
@@ -460,9 +462,8 @@ blockquote {
 
 /* Quote Section */
 .quote-section {
-    padding: 3rem 0 4rem;
+    padding: 2rem 0;
     text-align: center;
-    border-top: 1px solid var(--border-subtle);
 }
 
 .quote {
@@ -478,6 +479,7 @@ blockquote {
     font-style: italic;
     margin-bottom: 1rem;
     color: var(--text-secondary);
+    white-space: nowrap;
 }
 
 .quote cite {
