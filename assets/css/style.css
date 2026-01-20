@@ -20,7 +20,14 @@
 
 @font-face {
     font-family: "Linux Libertine";
-    src: local("Linux Libertine"), local("Linux Libertine O");
+    src: local("Linux Libertine"), local("Linux Libertine O"), local("Linux Libertine O Italic");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Linux Libertine";
+    font-style: italic;
+    src: local("Linux Libertine Italic"), local("Linux Libertine O Italic");
     font-display: swap;
 }
 
@@ -104,6 +111,7 @@ code {
 }
 
 blockquote {
+    font-family: "Linux Libertine", "Libertinus Serif", Georgia, "Times New Roman", serif;
     margin: 2rem 0;
     padding: 1.5rem;
     background: var(--bg-secondary);
@@ -423,7 +431,7 @@ blockquote {
 
 /* Links Page */
 .links-content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
@@ -506,6 +514,7 @@ blockquote {
 }
 
 .quote p {
+    font-family: "Linux Libertine", "Libertinus Serif", Georgia, "Times New Roman", serif;
     font-size: 1.4rem;
     font-style: italic;
     margin-bottom: 1rem;
