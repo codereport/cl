@@ -284,7 +284,7 @@ blockquote {
 
 /* Main Content */
 .main {
-    min-height: calc(100vh - 200px);
+    min-height: auto;
 }
 
 /* Hero Section */
@@ -301,7 +301,7 @@ blockquote {
 
 /* Content Sections */
 .content-section {
-    padding: 0.5rem 0 3rem;
+    padding: 0.5rem 0 2rem;
 }
 
 .section-header {
@@ -480,7 +480,7 @@ blockquote {
 
 /* Quote Section */
 .quote-section {
-    padding: 2rem 0;
+    padding: 1.5rem 0 2rem;
     text-align: center;
 }
 
