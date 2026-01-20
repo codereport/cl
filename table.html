@@ -3,74 +3,36 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combinatory Logic</title>
+    <title>Combinator Table - Combinatory Logic</title>
     <meta name="description" content="Explore combinatory logic, combinator birds, and tacit programming across different languages like BQN, J, APL, and Haskell.">
     <meta name="keywords" content="combinatory logic, combinators, tacit programming, BQN, APL, J, Haskell, functional programming">
     
-    <!-- Preconnect to external domains for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Modern fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/assets/css/modern-style.css">
-    
-    <!-- Early theme detection to prevent FOUC -->
-    <script>
-        (function() {
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        })();
-    </script>
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <nav class="nav">
             <div class="nav-container">
-
-                
-                <!-- Mobile menu button -->
                 <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
                     <span class="nav-toggle-icon"></span>
                 </button>
                 
-                <!-- Navigation menu -->
                 <div class="nav-menu" id="nav-menu">
                     <ul class="nav-list">
                         <li class="nav-item">
-                            <a href="/" class="nav-link">
-                                <i class="fas fa-home nav-icon"></i>
-                                <span>Home</span>
-                            </a>
+                            <a href="/" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/table.html" class="nav-link nav-link-active">
-                                <i class="fas fa-table nav-icon"></i>
-                                <span>Table</span>
-                            </a>
+                            <a href="/table.html" class="nav-link nav-link-active">Table</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/links.html" class="nav-link">
-                                <i class="fas fa-link nav-icon"></i>
-                                <span>Links</span>
-                            </a>
+                            <a href="/graphic.html" class="nav-link">Graphic</a>
                         </li>
-                        <li class="nav-item theme-toggle-container">
-                            <div class="theme-toggle-wrapper">
-                                <input type="checkbox" id="theme-toggle" class="theme-toggle-input" aria-label="Toggle dark mode">
-                                <label for="theme-toggle" class="theme-toggle-label">
-                                    <span class="theme-toggle-slider">
-                                        <i class="fas fa-sun theme-toggle-icon theme-toggle-icon-light"></i>
-                                        <i class="fas fa-moon theme-toggle-icon theme-toggle-icon-dark"></i>
-                                    </span>
-                                </label>
-                            </div>
+                        <li class="nav-item">
+                            <a href="/links.html" class="nav-link">Links</a>
                         </li>
                     </ul>
                 </div>
@@ -78,23 +40,19 @@
         </nav>
     </header>
 
-    <!-- Main content -->
     <main class="main">
-        <!-- Hero Section -->
         <section class="hero">
             <div class="container">
                 <h1>Combinator Table</h1>
             </div>
         </section>
 
-        <!-- Main Content -->
         <section class="content-section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title" id="birds">Combinators, Birds, Spellings & More</h2>
+                    <h2 class="section-title">Combinators, Birds, Spellings & More</h2>
                 </div>
 
-                <!-- Combinator Table -->
                 <div class="table-container">
                     <table class="modern-table">
                         <thead>
@@ -120,10 +78,10 @@
                                 <td>Identity</td>
                                 <td><code>SKK</code></td>
                                 <td><code>SKK</code></td>
-                                <td>✅</td>
+                                <td>✓</td>
                                 <td><code>id</code></td>
-                                <td><code>⊣⊢</code></td>
-                                <td><code>⊣⊢</code></td>
+                                <td><code class="font-apl">⊣⊢</code></td>
+                                <td><code class="font-bqn">⊣⊢</code></td>
                                 <td>Sch24</td>
                             </tr>
                             <tr>
@@ -133,10 +91,10 @@
                                 <td>Kestrel</td>
                                 <td><code>K</code></td>
                                 <td><code>K</code></td>
-                                <td>✅</td>
+                                <td>✓</td>
                                 <td><code>const</code></td>
-                                <td><code>⊢</code></td>
-                                <td><code>⊢</code></td>
+                                <td><code class="font-apl">⊢</code></td>
+                                <td><code class="font-bqn">⊢</code></td>
                                 <td>Sch24</td>
                             </tr>
                             <tr>
@@ -148,8 +106,8 @@
                                 <td><code>KI</code></td>
                                 <td></td>
                                 <td></td>
-                                <td><code>⊣</code></td>
-                                <td><code>⊣</code></td>
+                                <td><code class="font-apl">⊣</code></td>
+                                <td><code class="font-bqn">⊣</code></td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -159,23 +117,23 @@
                                 <td>Warbler</td>
                                 <td><code>C(BMR)</code></td>
                                 <td><code>CSK</code></td>
-                                <td>✅</td>
+                                <td>✓</td>
                                 <td><code>join</code></td>
-                                <td><code>⍨</code></td>
-                                <td><code>˜</code></td>
+                                <td><code class="font-apl">⍨</code></td>
+                                <td><code class="font-bqn">˜</code></td>
                                 <td>Cur29</td>
                             </tr>
                             <tr>
                                 <td><code>λabc.acb</code></td>
                                 <td><strong>C</strong></td>
                                 <td>2y2</td>
-                                <td>🐦 Cardinal</td>
+                                <td>Cardinal</td>
                                 <td><code>S(BBS)(KK)</code></td>
                                 <td><code>B(ΦBS)KK</code></td>
-                                <td>✅</td>
+                                <td>✓</td>
                                 <td><code>flip</code></td>
-                                <td><code>⍨</code></td>
-                                <td><code>˜</code></td>
+                                <td><code class="font-apl">⍨</code></td>
+                                <td><code class="font-bqn">˜</code></td>
                                 <td>Sch24</td>
                             </tr>
                             <tr>
@@ -185,10 +143,10 @@
                                 <td>Bluebird</td>
                                 <td><code>S(KS)K</code></td>
                                 <td><code>S(KS)K</code></td>
-                                <td>✅</td>
+                                <td>✓</td>
                                 <td><code>.</code></td>
-                                <td><code>∘⍤⍥ 2T</code></td>
-                                <td><code>∘○ 2T</code></td>
+                                <td><code class="font-apl">∘⍤⍥ 2T</code></td>
+                                <td><code class="font-bqn">∘○ 2T</code></td>
                                 <td>Sch24</td>
                             </tr>
                             <tr>
@@ -200,13 +158,13 @@
                                 <td><code>DB</code></td>
                                 <td></td>
                                 <td><code>.:</code></td>
-                                <td><code>⍤ 2T</code></td>
-                                <td><code>∘ 2T</code></td>
+                                <td><code class="font-apl">⍤ 2T</code></td>
+                                <td><code class="font-bqn">∘ 2T</code></td>
                                 <td>Cur30</td>
                             </tr>
                             <tr>
                                 <td><code>λabcde.a(bcde)</code></td>
-                                <td><strong>B<sub>2</sub></strong></td>
+                                <td><strong>B₂</strong></td>
                                 <td>3y13</td>
                                 <td>Bunting</td>
                                 <td><code>B(BBB)B</code></td>
@@ -219,7 +177,7 @@
                             </tr>
                             <tr>
                                 <td><code>λabcd.a(b(cd))</code></td>
-                                <td><strong>B<sub>3</sub></strong></td>
+                                <td><strong>B₃</strong></td>
                                 <td>1y111</td>
                                 <td>Becard</td>
                                 <td><code>B(BB)B</code></td>
@@ -240,7 +198,7 @@
                                 <td></td>
                                 <td><code>&lt;*&gt; / ap</code></td>
                                 <td></td>
-                                <td><code>⟜</code></td>
+                                <td><code class="font-bqn">⟜</code></td>
                                 <td>Sch24</td>
                             </tr>
                             <tr>
@@ -252,8 +210,8 @@
                                 <td>?</td>
                                 <td></td>
                                 <td><code>=&lt;&lt;</code></td>
-                                <td><code>⍛</code></td>
-                                <td><code>⊸</code></td>
+                                <td><code class="font-apl">⍛</code></td>
+                                <td><code class="font-bqn">⊸</code></td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -265,8 +223,8 @@
                                 <td><code>BB</code></td>
                                 <td></td>
                                 <td></td>
-                                <td><code>∘</code></td>
-                                <td><code>⟜</code></td>
+                                <td><code class="font-apl">∘</code></td>
+                                <td><code class="font-bqn">⟜</code></td>
                                 <td>Smu85</td>
                             </tr>
                             <tr>
@@ -278,8 +236,8 @@
                                 <td>?</td>
                                 <td></td>
                                 <td></td>
-                                <td><code>⍛</code></td>
-                                <td><code>⊸</code></td>
+                                <td><code class="font-apl">⍛</code></td>
+                                <td><code class="font-bqn">⊸</code></td>
                                 <td></td>
                             </tr>
                             <tr>
@@ -291,8 +249,8 @@
                                 <td><code>B₁SB</code></td>
                                 <td></td>
                                 <td><code>liftA2</code></td>
-                                <td><code>3T</code></td>
-                                <td><code>3T</code></td>
+                                <td><code class="font-apl">3T</code></td>
+                                <td><code class="font-bqn">3T</code></td>
                                 <td>Cur31</td>
                             </tr>
                             <tr>
@@ -304,13 +262,13 @@
                                 <td><code>B(SΦCB)B</code></td>
                                 <td></td>
                                 <td><code>on</code></td>
-                                <td><code>⍥</code></td>
-                                <td><code>○</code></td>
+                                <td><code class="font-apl">⍥</code></td>
+                                <td><code class="font-bqn">○</code></td>
                                 <td>Cur31</td>
                             </tr>
                             <tr>
                                 <td><code>λabcde.abc(de)</code></td>
-                                <td><strong>D<sub>1</sub></strong></td>
+                                <td><strong>D₁</strong></td>
                                 <td>3y31</td>
                                 <td>Dickcissel</td>
                                 <td><code>B(BB)</code></td>
@@ -323,7 +281,7 @@
                             </tr>
                             <tr>
                                 <td><code>λabcde.a(bc)(de)</code></td>
-                                <td><strong>D<sub>2</sub></strong></td>
+                                <td><strong>D₂</strong></td>
                                 <td>2y211</td>
                                 <td>Dovekie</td>
                                 <td><code>BB(BB)</code></td>
@@ -338,7 +296,7 @@
                                 <td><code>λabcde.ab(cde)</code></td>
                                 <td><strong>E</strong></td>
                                 <td>3y22</td>
-                                <td>🦅 Eagle</td>
+                                <td>Eagle</td>
                                 <td><code>B(BBB)</code></td>
                                 <td><code>BB₁</code></td>
                                 <td></td>
@@ -362,15 +320,15 @@
                             </tr>
                             <tr>
                                 <td><code>λabcde.a(bde)(cde)</code></td>
-                                <td><strong>Φ<sub>1</sub></strong></td>
+                                <td><strong>Φ₁</strong></td>
                                 <td>2y222</td>
                                 <td>Pheasant</td>
                                 <td>-</td>
                                 <td><code>BΦΦ</code></td>
                                 <td></td>
                                 <td></td>
-                                <td><code>3T</code></td>
-                                <td><code>3T</code></td>
+                                <td><code class="font-apl">3T</code></td>
+                                <td><code class="font-bqn">3T</code></td>
                                 <td>Cur31</td>
                             </tr>
                             <tr>
@@ -390,18 +348,14 @@
                     </table>
                 </div>
 
-                <!-- Reference Notes -->
                 <div class="card" style="margin-top: 3rem;">
                     <h3>Reference Notes</h3>
-                    <div style="font-size: 0.9rem; line-height: 1.6;">
-                        <p><strong>1 - CR:</strong> Chris Rathman (combinator spellings taken from <a href="https://www.angelfire.com/tx4/cus/combinator/birds.html" target="_blank">his site</a>)</p>
-                        <p><strong>2 - CH:</strong> Conor Hoekstra (combinator spellings generated from <a href="https://github.com/codereport/cl-cpp" target="_blank">C++ program</a>)</p>
-                        <p><strong>3 - Elementary combinators:</strong> Listed in Chapter 5 of Combinatory Logic: Volume I</p>
-                        <p><strong>4 - Arity Notation:</strong> AyBC = An A-arity yielding binary function (because BC is length two) where the arguments of the function have arity B and C</p>
-                    </div>
+                    <p><strong>1 - CR:</strong> Chris Rathman (combinator spellings taken from <a href="https://www.angelfire.com/tx4/cus/combinator/birds.html" target="_blank">his site</a>)</p>
+                    <p><strong>2 - CH:</strong> Conor Hoekstra (combinator spellings generated from <a href="https://github.com/codereport/cl-cpp" target="_blank">C++ program</a>)</p>
+                    <p><strong>3 - Elementary combinators:</strong> Listed in Chapter 5 of Combinatory Logic: Volume I</p>
+                    <p><strong>4 - Arity Notation:</strong> AyBC = An A-arity yielding binary function (because BC is length two) where the arguments of the function have arity B and C</p>
                 </div>
 
-                <!-- Historical References -->
                 <div class="section-header" style="margin-top: 4rem;">
                     <h2 class="section-title">Papers</h2>
                 </div>
@@ -484,67 +438,41 @@
         </section>
     </main>
 
-    <!-- Quote section -->
     <section class="quote-section">
         <div class="container">
             <blockquote class="quote">
-                <p>&ldquo;A language that doesn't affect the way you think about programming is not worth knowing.&rdquo;</p>
+                <p>"A language that doesn't affect the way you think about programming is not worth knowing."</p>
                 <cite>— Alan Perlis</cite>
             </blockquote>
         </div>
     </section>
 
-    <!-- JavaScript for mobile navigation and dark mode -->
     <script>
-        // Dark mode functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        
-        // Get current theme (already set by early script)
-        const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-        
-        // Initialize toggle slider
-        if (themeToggle) {
-            themeToggle.checked = currentTheme === 'dark';
-            
-            // Theme toggle event listener
-            themeToggle.addEventListener('change', function() {
-                const newTheme = this.checked ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-            });
-        }
-
-        // Mobile navigation toggle
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
-        
+
         if (navToggle && navMenu) {
             navToggle.addEventListener('click', function() {
                 navMenu.classList.toggle('nav-menu-open');
                 navToggle.classList.toggle('nav-toggle-active');
-                document.body.classList.toggle('nav-open');
             });
-            
-            // Close menu when clicking on a link
+
             const navLinks = navMenu.querySelectorAll('a');
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     navMenu.classList.remove('nav-menu-open');
                     navToggle.classList.remove('nav-toggle-active');
-                    document.body.classList.remove('nav-open');
                 });
             });
         }
-        
-        // Close menu when clicking outside
+
         document.addEventListener('click', function(event) {
-            if (navMenu && navToggle && 
-                !navMenu.contains(event.target) && 
-                !navToggle.contains(event.target) && 
+            if (navMenu && navToggle &&
+                !navMenu.contains(event.target) &&
+                !navToggle.contains(event.target) &&
                 navMenu.classList.contains('nav-menu-open')) {
                 navMenu.classList.remove('nav-menu-open');
                 navToggle.classList.remove('nav-toggle-active');
-                document.body.classList.remove('nav-open');
             }
         });
     </script>

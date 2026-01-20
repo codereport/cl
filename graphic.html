@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinators as Operators - Combinatory Logic</title>
+    <meta name="description" content="Visual comparison of combinators as operators across different programming languages.">
+    <meta name="keywords" content="combinatory logic, combinators, tacit programming, BQN, APL, J, Haskell, functional programming">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span class="nav-toggle-icon"></span>
+                </button>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/table.html" class="nav-link">Table</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/graphic.html" class="nav-link nav-link-active">Graphic</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/links.html" class="nav-link">Links</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <h1>Combinators as Operators</h1>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="combinator-table-wrap">
+                    <table class="combinator-table">
+                        <thead>
+                            <tr>
+                                <th>FOF</th>
+                                <th>APL</th>
+                                <th>Kap</th>
+                                <th>J</th>
+                                <th>BQN</th>
+                                <th>Jelly</th>
+                                <th>Uiua</th>
+                                <th>Haskell</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>W</th>
+                                <td class="font-apl">⍨</td>
+                                <td class="font-apl">⍨</td>
+                                <td class="font-jetbrains">~</td>
+                                <td class="font-bqn">˜</td>
+                                <td class="font-jetbrains">`</td>
+                                <td class="font-uiua">˙</td>
+                                <td class="font-jetbrains"><span class="highlight blue">join</span></td>
+                            </tr>
+                            <tr>
+                                <th>C</th>
+                                <td class="font-apl">⍨</td>
+                                <td class="font-apl">⍨</td>
+                                <td class="font-jetbrains">~</td>
+                                <td class="font-bqn">˜</td>
+                                <td class="font-jetbrains">@</td>
+                                <td class="font-uiua">˜</td>
+                                <td class="font-jetbrains"><span class="highlight blue">flip</span></td>
+                            </tr>
+                            <tr>
+                                <th>B</th>
+                                <td class="font-apl">∘⍤⍥</td>
+                                <td class="font-apl">⍥</td>
+                                <td class="font-jetbrains">@:&amp;:</td>
+                                <td class="font-bqn">∘○</td>
+                                <td class="font-jetbrains"><span class="highlight yellow font-apl">*</span></td>
+                                <td class="font-uiua"><span class="highlight red">mm</span></td>
+                                <td class="font-jetbrains">.</td>
+                            </tr>
+                            <tr>
+                                <th>B<sub>1</sub></th>
+                                <td class="font-apl">⍤</td>
+                                <td class="font-apl"><span class="highlight green">*</span></td>
+                                <td class="font-jetbrains">@:</td>
+                                <td class="font-bqn">∘</td>
+                                <td class="font-jetbrains"><span class="highlight yellow font-apl">*</span></td>
+                                <td class="font-uiua"><span class="highlight red">md</span></td>
+                                <td class="font-jetbrains">:.</td>
+                            </tr>
+                            <tr>
+                                <th>S</th>
+                                <td class="font-apl"></td>
+                                <td class="font-apl">∘</td>
+                                <td class="font-jetbrains"><span class="highlight green font-apl">*</span></td>
+                                <td class="font-bqn">⟜</td>
+                                <td class="font-jetbrains"></td>
+                                <td class="font-uiua">⟜</td>
+                                <td class="font-jetbrains"><span class="highlight blue">ap</span> / &lt;*&gt;</td>
+                            </tr>
+                            <tr>
+                                <th>Σ</th>
+                                <td class="font-apl">⍛</td>
+                                <td class="font-apl">⍛</td>
+                                <td class="font-jetbrains"></td>
+                                <td class="font-bqn">⊸</td>
+                                <td class="font-jetbrains"><span class="highlight yellow font-apl">*</span></td>
+                                <td class="font-uiua">⊸</td>
+                                <td class="font-jetbrains">=&lt;&lt;</td>
+                            </tr>
+                            <tr>
+                                <th>D</th>
+                                <td class="font-apl">∘</td>
+                                <td class="font-apl">∘</td>
+                                <td class="font-jetbrains"><span class="highlight green font-apl">*</span></td>
+                                <td class="font-bqn">⟜</td>
+                                <td class="font-jetbrains"></td>
+                                <td class="font-uiua"><span class="highlight red">d⊙m</span></td>
+                                <td class="font-jetbrains"></td>
+                            </tr>
+                            <tr>
+                                <th>Δ</th>
+                                <td class="font-apl">⍛</td>
+                                <td class="font-apl">⍛</td>
+                                <td class="font-jetbrains"></td>
+                                <td class="font-bqn">⊸</td>
+                                <td class="font-jetbrains"><span class="highlight yellow font-apl">*</span></td>
+                                <td class="font-uiua"><span class="highlight red">dm</span></td>
+                                <td class="font-code"></td>
+                            </tr>
+                            <tr>
+                                <th>Ψ</th>
+                                <td class="font-apl">⍥</td>
+                                <td class="font-apl">⍥</td>
+                                <td class="font-jetbrains">&amp;:</td>
+                                <td class="font-bqn">○</td>
+                                <td class="font-jetbrains"><span class="highlight yellow font-apl">*</span></td>
+                                <td class="font-uiua">∩</td>
+                                <td class="font-jetbrains"><span class="highlight blue">on</span></td>
+                            </tr>
+                            <tr>
+                                <th>D<sub>2</sub></th>
+                                <td class="font-apl">a⍛b∘c</td>
+                                <td class="font-apl">a⍛b∘c</td>
+                                <td class="font-jetbrains"></td>
+                                <td class="font-bqn">a⊸b⟜c</td>
+                                <td class="font-jetbrains"></td>
+                                <td class="font-uiua">⊓</td>
+                                <td class="font-code"></td>
+                            </tr>
+                            <tr>
+                                <th>Φ</th>
+                                <td class="font-apl"><span class="highlight green">*</span></td>
+                                <td class="font-apl">a«b»c</td>
+                                <td class="font-jetbrains"><span class="highlight green font-apl">*</span></td>
+                                <td class="font-bqn"><span class="highlight green">*</span></td>
+                                <td class="font-jetbrains"><span class="highlight yellow font-apl">*</span></td>
+                                <td class="font-uiua">⊃</td>
+                                <td class="font-jetbrains"><span class="highlight blue">liftA2</span></td>
+                            </tr>
+                            <tr>
+                                <th>Φ<sub>1</sub></th>
+                                <td class="font-apl"><span class="highlight green">*</span></td>
+                                <td class="font-apl">a«b»c</td>
+                                <td class="font-jetbrains"><span class="highlight green font-apl">*</span></td>
+                                <td class="font-bqn"><span class="highlight green">*</span></td>
+                                <td class="font-jetbrains"><span class="highlight yellow font-apl">*</span></td>
+                                <td class="font-uiua">⊃</td>
+                                <td class="font-jetbrains"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="legend">
+                        <span class="operators">Operators</span>
+                        <span class="functions">Functions</span>
+                        <span class="trains">Trains</span>
+                        <span class="chains">Chains</span>
+                        <span class="stacks">Stacks*</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="quote">
+                <p>"A language that doesn't affect the way you think about programming is not worth knowing."</p>
+                <cite>— Alan Perlis</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('nav-menu-open');
+                navToggle.classList.toggle('nav-toggle-active');
+            });
+
+            const navLinks = navMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('nav-menu-open');
+                    navToggle.classList.remove('nav-toggle-active');
+                });
+            });
+        }
+
+        document.addEventListener('click', function(event) {
+            if (navMenu && navToggle &&
+                !navMenu.contains(event.target) &&
+                !navToggle.contains(event.target) &&
+                navMenu.classList.contains('nav-menu-open')) {
+                navMenu.classList.remove('nav-menu-open');
+                navToggle.classList.remove('nav-toggle-active');
+            }
+        });
+
+        // Combinator highlight cycling animation
+        window.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                const colors = ["green", "yellow", "red", "blue"];
+                let index = 0;
+                const body = document.body;
+                body.classList.add("cycle-highlights");
+                body.dataset.active = colors[index];
+                index += 1;
+                setInterval(() => {
+                    body.dataset.active = colors[index % colors.length];
+                    index += 1;
+                }, 2000);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
