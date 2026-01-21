@@ -309,7 +309,7 @@ blockquote {
 
 /* Content Sections */
 .content-section {
-    padding: 0.5rem 0 2rem;
+    padding: 0.5rem 0 0.5rem;
 }
 
 .section-header {
@@ -377,7 +377,7 @@ blockquote {
 .videos-grid {
     display: grid;
     gap: 2rem;
-    margin: 2rem 0;
+    margin: 2rem 0 0 0;
 }
 
 @media (min-width: 1024px) {
@@ -507,7 +507,7 @@ blockquote {
 
 /* Quote Section */
 .quote-section {
-    padding: 1.5rem 0 2rem;
+    padding: 0.5rem 0 2rem;
     text-align: center;
 }
 
