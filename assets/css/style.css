@@ -355,6 +355,25 @@ blockquote {
     border: none;
 }
 
+/* Video Thumbnail */
+.video-thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card a:has(.video-thumbnail) {
+    display: block;
+    margin: 1.5rem 0;
+}
+
+.video-thumbnail:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 .videos-grid {
     display: grid;
     gap: 2rem;
