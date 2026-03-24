@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Combinators Graphic - Combinatory Logic</title>
     <meta name="description" content="Visual comparison of combinators as operators across different programming languages.">
-    <meta name="keywords" content="combinatory logic, combinators, tacit programming, BQN, APL, J, Haskell, functional programming">
+    <meta name="keywords" content="combinatory logic, combinators, tacit programming, BQN, APL, TinyAPL, J, Haskell, functional programming">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,6 +63,7 @@
                                 <th>Kap</th>
                                 <th>J</th>
                                 <th>BQN</th>
+                                <th>TinyAPL</th>
                                 <th>Jelly</th>
                                 <th>Uiua</th>
                                 <th>Haskell</th>
@@ -75,9 +76,10 @@
                                 <td class="font-apl">⍨</td>
                                 <td class="font-jetbrains">~</td>
                                 <td class="font-bqn">˜</td>
+                                <td class="font-apl">⍨</td>
                                 <td class="font-jetbrains">`</td>
                                 <td class="font-uiua">˙</td>
-                                <td class="font-jetbrains"><span class="highlight blue">join</span></td>
+                                <td class="font-jetbrains"><span class="glow-blue">join</span></td>
                             </tr>
                             <tr>
                                 <th>C</th>
@@ -85,39 +87,43 @@
                                 <td class="font-apl">⍨</td>
                                 <td class="font-jetbrains">~</td>
                                 <td class="font-bqn">˜</td>
+                                <td class="font-apl">⍨</td>
                                 <td class="font-jetbrains">@</td>
                                 <td class="font-uiua">˜</td>
-                                <td class="font-jetbrains"><span class="highlight blue">flip</span></td>
+                                <td class="font-jetbrains"><span class="glow-blue">flip</span></td>
                             </tr>
                             <tr>
                                 <th>B</th>
-                                <td class="font-apl">∘⍤⍥</td>
-                                <td class="font-apl">⍥</td>
+                                <td class="font-apl">∘⍤⍥<span class="glow-green">*</span></td>
+                                <td class="font-apl">⍥<span class="glow-green">*</span></td>
                                 <td class="font-jetbrains">@:&amp;:</td>
-                                <td class="font-bqn">∘○</td>
-                                <td class="font-jetbrains"><span class="highlight yellow font-apl">*</span></td>
-                                <td class="font-uiua"><span class="highlight red">mm</span></td>
+                                <td class="font-bqn">∘○<span class="glow-green">*</span></td>
+                                <td class="font-apl">∘○<span class="glow-green">⦅⦆</span></td>
+                                <td class="font-apl"><span class="glow-yellow">*</span></td>
+                                <td class="font-uiua"><span class="glow-red">mm</span></td>
                                 <td class="font-jetbrains">.</td>
                             </tr>
                             <tr>
                                 <th>B<sub>1</sub></th>
-                                <td class="font-apl">⍤</td>
-                                <td class="font-apl"><span class="highlight green">*</span></td>
+                                <td class="font-apl">⍤<span class="glow-green">*</span></td>
+                                <td class="font-apl"><span class="glow-green">*</span></td>
                                 <td class="font-jetbrains">@:</td>
-                                <td class="font-bqn">∘</td>
-                                <td class="font-jetbrains"><span class="highlight yellow font-apl">*</span></td>
-                                <td class="font-uiua"><span class="highlight red">md</span></td>
+                                <td class="font-bqn">∘<span class="glow-green">*</span></td>
+                                <td class="font-apl">∘<span class="glow-green">⦅⦆</span></td>
+                                <td class="font-apl"><span class="glow-yellow">*</span></td>
+                                <td class="font-uiua"><span class="glow-red">md</span></td>
                                 <td class="font-jetbrains">:.</td>
                             </tr>
                             <tr>
                                 <th>S</th>
                                 <td class="font-apl"></td>
                                 <td class="font-apl">∘</td>
-                                <td class="font-jetbrains"><span class="highlight green font-apl">*</span></td>
+                                <td class="font-apl"><span class="glow-green">*</span></td>
                                 <td class="font-bqn">⟜</td>
+                                <td class="font-apl">⟜⇽</td>
                                 <td class="font-jetbrains"></td>
                                 <td class="font-uiua">⟜</td>
-                                <td class="font-jetbrains"><span class="highlight blue">ap</span> / &lt;*&gt;</td>
+                                <td class="font-jetbrains"><span class="glow-blue">ap</span> / &lt;*&gt;</td>
                             </tr>
                             <tr>
                                 <th>Σ</th>
@@ -125,7 +131,8 @@
                                 <td class="font-apl">⍛</td>
                                 <td class="font-jetbrains"></td>
                                 <td class="font-bqn">⊸</td>
-                                <td class="font-jetbrains"><span class="highlight yellow font-apl">*</span></td>
+                                <td class="font-apl">⊸⇾</td>
+                                <td class="font-apl"><span class="glow-yellow">*</span></td>
                                 <td class="font-uiua">⊸</td>
                                 <td class="font-jetbrains">=&lt;&lt;</td>
                             </tr>
@@ -133,10 +140,11 @@
                                 <th>D</th>
                                 <td class="font-apl">∘</td>
                                 <td class="font-apl">∘</td>
-                                <td class="font-jetbrains"><span class="highlight green font-apl">*</span></td>
+                                <td class="font-apl"><span class="glow-green">*</span></td>
                                 <td class="font-bqn">⟜</td>
+                                <td class="font-apl">⟜</td>
                                 <td class="font-jetbrains"></td>
-                                <td class="font-uiua"><span class="highlight red">d⊙m</span></td>
+                                <td class="font-uiua"><span class="glow-red">d⊙m</span></td>
                                 <td class="font-jetbrains"></td>
                             </tr>
                             <tr>
@@ -145,8 +153,9 @@
                                 <td class="font-apl">⍛</td>
                                 <td class="font-jetbrains"></td>
                                 <td class="font-bqn">⊸</td>
-                                <td class="font-jetbrains"><span class="highlight yellow font-apl">*</span></td>
-                                <td class="font-uiua"><span class="highlight red">dm</span></td>
+                                <td class="font-apl">⊸</td>
+                                <td class="font-apl"><span class="glow-yellow">*</span></td>
+                                <td class="font-uiua"><span class="glow-red">dm</span></td>
                                 <td class="font-code"></td>
                             </tr>
                             <tr>
@@ -155,9 +164,10 @@
                                 <td class="font-apl">⍥</td>
                                 <td class="font-jetbrains">&amp;:</td>
                                 <td class="font-bqn">○</td>
-                                <td class="font-jetbrains"><span class="highlight yellow font-apl">*</span></td>
+                                <td class="font-apl">○</td>
+                                <td class="font-apl"><span class="glow-yellow">*</span></td>
                                 <td class="font-uiua">∩</td>
-                                <td class="font-jetbrains"><span class="highlight blue">on</span></td>
+                                <td class="font-jetbrains"><span class="glow-blue">on</span></td>
                             </tr>
                             <tr>
                                 <th>D<sub>2</sub></th>
@@ -165,27 +175,30 @@
                                 <td class="font-apl">a⍛b∘c</td>
                                 <td class="font-jetbrains"></td>
                                 <td class="font-bqn">a⊸b⟜c</td>
+                                <td class="font-apl">a⊸b⟜c</td>
                                 <td class="font-jetbrains"></td>
                                 <td class="font-uiua">⊓</td>
                                 <td class="font-code"></td>
                             </tr>
                             <tr>
                                 <th>Φ</th>
-                                <td class="font-apl"><span class="highlight green">*</span></td>
-                                <td class="font-apl">a«b»c</td>
-                                <td class="font-jetbrains"><span class="highlight green font-apl">*</span></td>
-                                <td class="font-bqn"><span class="highlight green">*</span></td>
-                                <td class="font-jetbrains"><span class="highlight yellow font-apl">*</span></td>
+                                <td class="font-apl"><span class="glow-green">*</span></td>
+                                <td class="font-apl">«»</td>
+                                <td class="font-apl"><span class="glow-green">*</span></td>
+                                <td class="font-bqn"><span class="glow-green">*</span></td>
+                                <td class="font-apl">«»<span class="glow-green">⦅⦆</span></td>
+                                <td class="font-apl"><span class="glow-yellow">*</span></td>
                                 <td class="font-uiua">⊃</td>
-                                <td class="font-jetbrains"><span class="highlight blue">liftA2</span></td>
+                                <td class="font-jetbrains"><span class="glow-blue">liftA2</span></td>
                             </tr>
                             <tr>
                                 <th>Φ<sub>1</sub></th>
-                                <td class="font-apl"><span class="highlight green">*</span></td>
-                                <td class="font-apl">a«b»c</td>
-                                <td class="font-jetbrains"><span class="highlight green font-apl">*</span></td>
-                                <td class="font-bqn"><span class="highlight green">*</span></td>
-                                <td class="font-jetbrains"><span class="highlight yellow font-apl">*</span></td>
+                                <td class="font-apl"><span class="glow-green">*</span></td>
+                                <td class="font-apl">«»</td>
+                                <td class="font-apl"><span class="glow-green">*</span></td>
+                                <td class="font-bqn"><span class="glow-green">*</span></td>
+                                <td class="font-apl">«»<span class="glow-green">⦅⦆</span></td>
+                                <td class="font-apl"><span class="glow-yellow">*</span></td>
                                 <td class="font-uiua">⊃</td>
                                 <td class="font-jetbrains"></td>
                             </tr>
@@ -193,11 +206,11 @@
                     </table>
 
                     <div class="legend">
-                        <span class="operators">Operators</span>
-                        <span class="functions">Functions</span>
-                        <span class="trains">Trains</span>
-                        <span class="chains">Chains</span>
-                        <span class="stacks">Stacks*</span>
+                        <span>Operators</span>
+                        <span class="glow-blue">Functions</span>
+                        <span class="glow-green">Trains</span>
+                        <span class="glow-yellow">Chains</span>
+                        <span class="glow-red">Stacks*</span>
                     </div>
                 </div>
             </div>

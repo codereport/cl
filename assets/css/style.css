@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @font-face {
-    font-family: "Apl385";
-    src: local("Apl385"), url("/assets/Apl385.ttf") format("truetype");
+    font-family: "APL387";
+    src: local("APL387"), url("/assets/APL387.ttf") format("truetype");
     font-display: swap;
 }
 
@@ -603,7 +603,7 @@ blockquote {
 
 /* Array Language Fonts */
 .font-apl {
-    font-family: "Apl385", "Times New Roman", serif;
+    font-family: "APL387", "Times New Roman", serif;
 }
 
 .font-bqn {
@@ -624,55 +624,11 @@ blockquote {
     font-feature-settings: "liga" 0, "calt" 0;
 }
 
-/* Highlight Badges */
-.highlight {
-    display: inline-block;
-    min-width: 2.4em;
-    padding: 0.12em 0.3em;
-    border-radius: 0.18em;
-    text-align: center;
-    color: #ffffff;
-    font-weight: 600;
-    opacity: 1;
-    transition: opacity 0.8s ease, box-shadow 0.8s ease;
-    box-shadow:
-        0 0 6px var(--glow-color, rgba(255, 255, 255, 0.2)),
-        0 0 12px rgba(255, 255, 255, 0.18);
-}
-
-.highlight.green {
-    background: rgba(0, 176, 80, 0.5);
-    --glow-color: rgba(0, 176, 80, 0.9);
-}
-
-.highlight.yellow {
-    background: rgba(255, 255, 0, 0.5);
-    --glow-color: rgba(255, 255, 0, 0.95);
-}
-
-.highlight.red {
-    background: rgba(255, 0, 0, 0.5);
-    --glow-color: rgba(255, 0, 0, 0.9);
-}
-
-.highlight.blue {
-    background: rgba(0, 176, 240, 0.5);
-    --glow-color: rgba(0, 176, 240, 0.9);
-}
-
-body.cycle-highlights .highlight {
-    opacity: 0.2;
-}
-
-body.cycle-highlights[data-active="green"] .highlight.green,
-body.cycle-highlights[data-active="yellow"] .highlight.yellow,
-body.cycle-highlights[data-active="red"] .highlight.red,
-body.cycle-highlights[data-active="blue"] .highlight.blue {
-    opacity: 1;
-    box-shadow:
-        0 0 8px var(--glow-color),
-        0 0 16px rgba(255, 255, 255, 0.28);
-}
+/* Color Text */
+.glow-green { color: var(--color-green); font-weight: 600; }
+.glow-yellow { color: var(--color-yellow); font-weight: 600; }
+.glow-red { color: var(--color-red); font-weight: 600; }
+.glow-blue { color: var(--color-blue); font-weight: 600; }
 
 /* Legend */
 .legend {
@@ -689,12 +645,6 @@ body.cycle-highlights[data-active="blue"] .highlight.blue {
     font-weight: 600;
 }
 
-.legend .operators { color: var(--text-primary); }
-.legend .functions { color: var(--color-blue); }
-.legend .trains { color: var(--color-green); }
-.legend .chains { color: var(--color-yellow); }
-.legend .stacks { color: var(--color-red); }
-
 /* Responsive */
 @media (max-width: 860px) {
     .combinator-table {
@@ -705,10 +655,6 @@ body.cycle-highlights[data-active="blue"] .highlight.blue {
     .combinator-table tbody td,
     .combinator-table tbody th {
         padding: 6px 6px;
-    }
-
-    .highlight {
-        min-width: 2em;
     }
 
     .legend {

@@ -1,10 +1,6 @@
 // Page order for arrow navigation
 const pages = ['/', '/table.html', '/graphic.html', '/links.html'];
 
-// Track graphic page animation
-let graphicAnimationTimeout = null;
-let graphicAnimationInterval = null;
-
 // Get current page index
 function getCurrentIndex() {
     let path = window.location.pathname;
@@ -72,31 +68,6 @@ function initPage() {
         }
     });
 
-    // Clear any existing graphic animation
-    if (graphicAnimationTimeout) {
-        clearTimeout(graphicAnimationTimeout);
-        graphicAnimationTimeout = null;
-    }
-    if (graphicAnimationInterval) {
-        clearInterval(graphicAnimationInterval);
-        graphicAnimationInterval = null;
-    }
-    
-    // Graphic page: combinator highlight cycling
-    if (window.location.pathname === '/graphic.html') {
-        graphicAnimationTimeout = setTimeout(() => {
-            const colors = ["green", "yellow", "red", "blue"];
-            let index = 0;
-            const body = document.body;
-            body.classList.add("cycle-highlights");
-            body.dataset.active = colors[index];
-            index += 1;
-            graphicAnimationInterval = setInterval(() => {
-                body.dataset.active = colors[index % colors.length];
-                index += 1;
-            }, 2000);
-        }, 2000);
-    }
 }
 
 // Update active nav link based on current URL
