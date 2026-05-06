@@ -263,6 +263,136 @@
         </div>
     </section>
 
+    <div id="combinator-modal" class="modal-overlay" role="dialog" aria-modal="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <div class="modal-symbol" id="modal-symbol"></div>
+            <div class="modal-bird" id="modal-bird"></div>
+            <div class="modal-section-title">Spellings</div>
+            <table class="modal-table"><tbody id="modal-spellings"></tbody></table>
+            <div class="modal-section-title">Language Glyphs</div>
+            <table class="modal-table modal-glyphs-table"><tbody id="modal-glyphs"></tbody></table>
+        </div>
+    </div>
+
     <script src="/assets/js/nav.js"></script>
+    <script>
+    (function() {
+        const LOGOS = 'https://raw.githubusercontent.com/codereport/logos/main/';
+
+        const data = {
+            W:  { bird: 'Warbler',         lambda: 'λab.abb',
+                  python: null,
+                  cpp: '[](auto f) { return [=](auto x) { return f(x, x); }; }' },
+            C:  { bird: 'Cardinal',        lambda: 'λabc.acb',
+                  python: null,
+                  cpp: '[](auto f) { return [=](auto x, auto y) { return f(y, x); }; }' },
+            B:  { bird: 'Bluebird',        lambda: 'λabc.a(bc)',
+                  python: 'lambda f, g: lambda x: f(g(x))',
+                  cpp: '[](auto f, auto g) { return [=](auto x) { return f(g(x)); }; }' },
+            B1: { bird: 'Blackbird',       lambda: 'λabcd.a(bcd)',
+                  python: 'lambda f, g: lambda x, y: f(g(x, y))',
+                  cpp: '[](auto f, auto g) { return [=](auto x, auto y) { return f(g(x, y)); }; }' },
+            S:  { bird: 'Starling',        lambda: 'λabc.ac(bc)',
+                  python: 'lambda f, g: lambda x: f(x, g(x))',
+                  cpp: '[](auto f, auto g) { return [=](auto x) { return f(x, g(x)); }; }' },
+            Σ:  { bird: 'Violet Starling', lambda: 'λabc.a(bc)c',
+                  python: 'lambda f, g: lambda x: g(f(x), x)',
+                  cpp: '[](auto f, auto g) { return [=](auto x) { return g(f(x), x); }; }' },
+            D:  { bird: 'Dove',            lambda: 'λabcd.ab(cd)',
+                  python: null, cpp: null },
+            Δ:  { bird: 'Zebra Dove',      lambda: 'λabcd.a(bc)d',
+                  python: null, cpp: null },
+            Ψ:  { bird: 'Psi',             lambda: 'λabcd.a(bc)(bd)',
+                  python: 'lambda f, g: lambda x, y: f(g(x), g(y))',
+                  cpp: '[](auto f, auto g) { return [=](auto x, auto y) { return f(g(x), g(y)); }; }' },
+            D2: { bird: 'Dovekie',         lambda: 'λabcde.a(bc)(de)',
+                  python: null,
+                  cpp: '[](auto f, auto g, auto h) { return [=](auto x, auto y) { return g(f(x), h(y)); }; }' },
+            Φ:  { bird: 'Phoenix',         lambda: 'λabcd.a(bd)(cd)',
+                  python: null,
+                  cpp: '[](auto f, auto g, auto h) { return [=](auto x) { return g(f(x), h(x)); }; }' },
+            Φ1: { bird: 'Pheasant',        lambda: 'λabcde.a(bde)(cde)',
+                  python: 'lambda f, g, h: lambda x, y: g(f(x, y), h(x, y))',
+                  cpp: '[](auto f, auto g, auto h) { return [=](auto x, auto y) { return g(f(x, y), h(x, y)); }; }' },
+            N:  { bird: 'Eastern Nicator', lambda: 'λabcd.ab(cbd)',
+                  python: null, cpp: null },
+            ν:  { bird: 'Western Nicator', lambda: 'λabcd.a(bcd)d',
+                  python: null, cpp: null }
+        };
+
+        const langNames = ['APL', 'Kap', 'J', 'BQN', 'TinyAPL', 'FIXAPL', 'Jelly', 'Uiua', 'Haskell'];
+        const langLogos = {
+            APL: 'apl.png', Kap: 'kap_darkmode.png', J: 'j.svg',
+            BQN: 'bqn.svg', TinyAPL: 'tinyapl.svg', FIXAPL: 'fixapl.png',
+            Uiua: 'uiua.png', Haskell: 'haskell.svg',
+            Python: 'python.png', 'C++': 'cpp.png'
+        };
+
+        const img = f => `<img src="${LOGOS}${f}" class="modal-lang-logo" alt="">`;
+        const label = n => {
+            const f = langLogos[n];
+            return `<span class="modal-lang-label">${f ? img(f) + ' ' : ''}${n}</span>`;
+        };
+
+        const modal    = document.getElementById('combinator-modal');
+        const symbolEl = document.getElementById('modal-symbol');
+        const birdEl   = document.getElementById('modal-bird');
+        const spellEl  = document.getElementById('modal-spellings');
+        const glyphEl  = document.getElementById('modal-glyphs');
+
+        function openModal(row) {
+            const th = row.querySelector('th');
+            if (!th) return;
+            const key  = th.textContent.trim();
+            const info = data[key];
+            if (!info) return;
+
+            symbolEl.innerHTML = th.innerHTML.trim();
+            birdEl.textContent = info.bird;
+
+            let sp = `<tr><td><span class="modal-lang-label"><span class="modal-lambda-sym">λ</span></span></td><td><code>${info.lambda}</code></td></tr>`;
+            if (info.python) sp += `<tr><td>${label('Python')}</td><td><code>${info.python}</code></td></tr>`;
+            if (info.cpp)    sp += `<tr><td>${label('C++')}</td><td><code>${info.cpp}</code></td></tr>`;
+            spellEl.innerHTML = sp;
+
+            const cells = row.querySelectorAll('td');
+            const glyphs = [];
+            cells.forEach((cell, i) => {
+                if (i >= langNames.length) return;
+                if (!cell.textContent.trim()) return;
+                glyphs.push({ lang: langNames[i], content: cell.innerHTML.trim(), cls: cell.className });
+            });
+            let gl = '';
+            for (let j = 0; j < glyphs.length; j += 2) {
+                gl += '<tr>';
+                gl += `<td>${label(glyphs[j].lang)}</td><td class="modal-glyph ${glyphs[j].cls}">${glyphs[j].content}</td>`;
+                if (j + 1 < glyphs.length) {
+                    gl += `<td>${label(glyphs[j+1].lang)}</td><td class="modal-glyph ${glyphs[j+1].cls}">${glyphs[j+1].content}</td>`;
+                } else {
+                    gl += '<td></td><td></td>';
+                }
+                gl += '</tr>';
+            }
+            glyphEl.innerHTML = gl;
+
+            modal.classList.add('modal-active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('modal-active');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.combinator-table tbody tr').forEach(row => {
+            row.addEventListener('click', () => openModal(row));
+        });
+
+        document.querySelector('.modal-close').addEventListener('click', closeModal);
+        modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    })();
+    </script>
 </body>
 </html>

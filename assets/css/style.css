@@ -645,6 +645,168 @@ blockquote {
     font-weight: 600;
 }
 
+/* Clickable Combinator Rows */
+.combinator-table tbody tr {
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.combinator-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Combinator Explainer Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.modal-overlay.modal-active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 0.75rem;
+    padding: 2.5rem 2.5rem 2rem;
+    max-width: 95vw;
+    width: fit-content;
+    min-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalFadeIn 0.2s ease;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.75rem;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+}
+
+.modal-symbol {
+    text-align: center;
+    font-size: 5rem;
+    font-family: "Linux Libertine", serif;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin-bottom: 0.15rem;
+}
+
+.modal-symbol sub {
+    font-size: 0.5em;
+}
+
+.modal-bird {
+    text-align: center;
+    font-family: "Linux Libertine", serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 1.75rem;
+}
+
+.modal-section-title {
+    font-family: "Linux Libertine", serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: 1.75rem 0 0.5rem;
+    text-align: center;
+}
+
+.modal-section-title:first-of-type {
+    margin-top: 0;
+}
+
+.modal-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.modal-table td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border-subtle);
+    vertical-align: middle;
+}
+
+.modal-table tr:last-child td {
+    border-bottom: none;
+}
+
+.modal-lang-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "Linux Libertine", serif;
+    color: var(--text-muted);
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+.modal-lang-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.modal-lambda-sym {
+    font-family: "Linux Libertine", serif;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+}
+
+.modal-glyph {
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.modal-table td code {
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+.modal-glyphs-table {
+    width: auto;
+    margin: 0 auto;
+}
+
+.modal-glyphs-table .modal-lang-label {
+    min-width: auto;
+}
+
+.modal-glyphs-table td:nth-child(3) {
+    padding-left: 3rem;
+}
+
 /* Responsive */
 @media (max-width: 860px) {
     .combinator-table {
@@ -676,6 +838,23 @@ blockquote {
     .legend {
         font-size: 16px;
         gap: 8px;
+    }
+
+    .modal-content {
+        padding: 2rem 1.25rem 1.5rem;
+        min-width: auto;
+    }
+
+    .modal-symbol {
+        font-size: 3.5rem;
+    }
+
+    .modal-bird {
+        font-size: 1.15rem;
+    }
+
+    .modal-glyph {
+        font-size: 1.1rem;
     }
 }
 
