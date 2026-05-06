@@ -311,7 +311,7 @@
                   python: null,
                   cpp: '[](auto f, auto g, auto h) { return [=](auto x, auto y) { return g(f(x), h(y)); }; }' },
             Φ:  { bird: 'Phoenix',         arity: '1y121', lambda: 'λabcd.a(bd)(cd)',
-                  python: null,
+                  python: 'lambda f, g, h: lambda x: g(f(x), h(x))',
                   cpp: '[](auto f, auto g, auto h) { return [=](auto x) { return g(f(x), h(x)); }; }' },
             Φ1: { bird: 'Pheasant',        arity: '2y222', lambda: 'λabcde.a(bde)(cde)',
                   python: 'lambda f, g, h: lambda x, y: g(f(x, y), h(x, y))',
@@ -387,13 +387,58 @@
             document.body.style.overflow = '';
         }
 
-        document.querySelectorAll('.combinator-table tbody tr').forEach(row => {
-            row.addEventListener('click', () => openModal(row));
+        const rows = Array.from(document.querySelectorAll('.combinator-table tbody tr')).filter(row => {
+            const th = row.querySelector('th');
+            return th && data[th.textContent.trim()];
+        });
+
+        let currentIdx = -1;
+
+        const keyMap = {};
+        const aliasMap = { '1': 'B1', '2': 'D2', 'p': 'Φ', 'g': 'Σ' };
+        rows.forEach((row, i) => {
+            const sym = row.querySelector('th').textContent.trim();
+            if (sym.length === 1 && /[A-Za-z]/.test(sym)) {
+                keyMap[sym.toLowerCase()] = i;
+            }
+            Object.entries(aliasMap).forEach(([k, v]) => {
+                if (sym === v) keyMap[k] = i;
+            });
+        });
+
+        rows.forEach((row, i) => {
+            row.addEventListener('click', () => {
+                currentIdx = i;
+                openModal(row);
+            });
         });
 
         document.querySelector('.modal-close').addEventListener('click', closeModal);
         modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') { closeModal(); return; }
+
+            const isOpen = modal.classList.contains('modal-active');
+
+            if (isOpen) {
+                if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    currentIdx = (currentIdx - 1 + rows.length) % rows.length;
+                    openModal(rows[currentIdx]);
+                } else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    currentIdx = (currentIdx + 1) % rows.length;
+                    openModal(rows[currentIdx]);
+                }
+            } else if (!e.ctrlKey && !e.metaKey && !e.altKey) {
+                const idx = keyMap[e.key.toLowerCase()];
+                if (idx !== undefined) {
+                    currentIdx = idx;
+                    openModal(rows[currentIdx]);
+                }
+            }
+        });
     })();
     </script>
 </body>
