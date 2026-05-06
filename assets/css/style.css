@@ -729,6 +729,14 @@ blockquote {
     font-size: 1.4rem;
     font-style: italic;
     color: var(--text-secondary);
+    margin-bottom: 0.35rem;
+}
+
+.modal-arity {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    color: var(--text-muted);
     margin-bottom: 1.75rem;
 }
 
