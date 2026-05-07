@@ -285,10 +285,10 @@
 
         const data = {
             W:  { bird: 'Warbler',         arity: '1y2',   lambda: 'λab.abb',
-                  python: null,
+                  python: 'lambda f: lambda x: f(x, x)',
                   cpp: '[](auto f) { return [=](auto x) { return f(x, x); }; }' },
             C:  { bird: 'Cardinal',        arity: '2y2',   lambda: 'λabc.acb',
-                  python: null,
+                  python: 'lambda f: lambda x, y: f(y, x)',
                   cpp: '[](auto f) { return [=](auto x, auto y) { return f(y, x); }; }' },
             B:  { bird: 'Bluebird',        arity: '1y11',  lambda: 'λabc.a(bc)',
                   python: 'lambda f, g: lambda x: f(g(x))',
@@ -310,7 +310,7 @@
                   python: 'lambda f, g: lambda x, y: f(g(x), g(y))',
                   cpp: '[](auto f, auto g) { return [=](auto x, auto y) { return f(g(x), g(y)); }; }' },
             D2: { bird: 'Dovekie',         arity: '2y211', lambda: 'λabcde.a(bc)(de)',
-                  python: null,
+                  python: 'lambda f, g, h: lambda x, y: g(f(x), h(y))',
                   cpp: '[](auto f, auto g, auto h) { return [=](auto x, auto y) { return g(f(x), h(y)); }; }' },
             Φ:  { bird: 'Phoenix',         arity: '1y121', lambda: 'λabcd.a(bd)(cd)',
                   python: 'lambda f, g, h: lambda x: g(f(x), h(x))',
