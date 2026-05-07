@@ -20,6 +20,13 @@ async function navigateTo(url, pushState = true) {
         document.title = doc.title;
         document.body.innerHTML = doc.body.innerHTML;
         
+        // Execute inline scripts in the new content (external scripts like nav.js are already loaded)
+        document.body.querySelectorAll('script:not([src])').forEach(oldScript => {
+            const newScript = document.createElement('script');
+            newScript.textContent = oldScript.textContent;
+            oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
+        
         // Update URL (skip if handling popstate)
         if (pushState) {
             history.pushState({}, '', url);
@@ -86,6 +93,9 @@ function updateActiveNav() {
 document.addEventListener('keydown', function(event) {
     // Don't navigate if user is typing in an input
     if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') return;
+    // Don't navigate if a modal is open
+    const modal = document.querySelector('.modal-active');
+    if (modal) return;
     
     const currentIndex = getCurrentIndex();
     if (currentIndex === -1) return;

@@ -279,6 +279,8 @@
     <script src="/assets/js/nav.js"></script>
     <script>
     (function() {
+        if (window._graphicCleanup) window._graphicCleanup();
+        const _ac = new AbortController();
         const LOGOS = 'https://raw.githubusercontent.com/codereport/logos/main/';
 
         const data = {
@@ -418,27 +420,35 @@
 
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape') { closeModal(); return; }
+            if (e.ctrlKey || e.metaKey || e.altKey) return;
 
             const isOpen = modal.classList.contains('modal-active');
 
-            if (isOpen) {
-                if (e.key === 'ArrowUp') {
-                    e.preventDefault();
-                    currentIdx = (currentIdx - 1 + rows.length) % rows.length;
-                    openModal(rows[currentIdx]);
-                } else if (e.key === 'ArrowDown') {
-                    e.preventDefault();
-                    currentIdx = (currentIdx + 1) % rows.length;
-                    openModal(rows[currentIdx]);
-                }
-            } else if (!e.ctrlKey && !e.metaKey && !e.altKey) {
-                const idx = keyMap[e.key.toLowerCase()];
-                if (idx !== undefined) {
+            if (e.key === 'ArrowUp' && isOpen) {
+                e.preventDefault();
+                currentIdx = (currentIdx - 1 + rows.length) % rows.length;
+                openModal(rows[currentIdx]);
+                return;
+            }
+            if (e.key === 'ArrowDown' && isOpen) {
+                e.preventDefault();
+                currentIdx = (currentIdx + 1) % rows.length;
+                openModal(rows[currentIdx]);
+                return;
+            }
+
+            const idx = keyMap[e.key.toLowerCase()];
+            if (idx !== undefined) {
+                if (isOpen && idx === currentIdx) {
+                    closeModal();
+                } else {
                     currentIdx = idx;
                     openModal(rows[currentIdx]);
                 }
             }
-        });
+        }, { signal: _ac.signal });
+
+        window._graphicCleanup = () => _ac.abort();
     })();
     </script>
 </body>
