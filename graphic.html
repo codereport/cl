@@ -286,55 +286,69 @@
         const data = {
             W:  { bird: 'Warbler',         arity: '1y2',   lambda: 'λab.abb',
                   lean: 'fun {α β : Type} (f : α → α → β) x => f x x',
+                  scheme: '(lambda (f) (lambda (x) (f x x)))',
                   python: 'lambda f: lambda x: f(x, x)',
                   cpp: '[](auto f) { return [=](auto x) { return f(x, x); }; }' },
             C:  { bird: 'Cardinal',        arity: '2y2',   lambda: 'λabc.acb',
                   lean: 'fun {α β γ : Type} (f : α → β → γ) x y => f y x',
+                  scheme: '(lambda (f) (lambda (x y) (f y x)))',
                   python: 'lambda f: lambda x, y: f(y, x)',
                   cpp: '[](auto f) { return [=](auto x, auto y) { return f(y, x); }; }' },
             B:  { bird: 'Bluebird',        arity: '1y11',  lambda: 'λabc.a(bc)',
                   lean: 'fun {α β γ : Type} (f : β → γ) (g : α → β) x => f (g x)',
+                  scheme: '(lambda (f g) (lambda (x) (f (g x))))',
                   python: 'lambda f, g: lambda x: f(g(x))',
                   cpp: '[](auto f, auto g) { return [=](auto x) { return f(g(x)); }; }' },
             B1: { bird: 'Blackbird',       arity: '2y12',  lambda: 'λabcd.a(bcd)',
                   lean: 'fun {α β γ δ : Type} (f : γ → δ) (g : α → β → γ) x y => f (g x y)',
+                  scheme: '(lambda (f g) (lambda (x y) (f (g x y))))',
                   python: 'lambda f, g: lambda x, y: f(g(x, y))',
                   cpp: '[](auto f, auto g) { return [=](auto x, auto y) { return f(g(x, y)); }; }' },
             S:  { bird: 'Starling',        arity: '1y21',  lambda: 'λabc.ac(bc)',
                   lean: 'fun {α β γ : Type} (f : α → β → γ) (g : α → β) x => f x (g x)',
+                  scheme: '(lambda (f g) (lambda (x) (f x (g x))))',
                   python: 'lambda f, g: lambda x: f(x, g(x))',
                   cpp: '[](auto f, auto g) { return [=](auto x) { return f(x, g(x)); }; }' },
             Σ:  { bird: 'Violet Starling', arity: '1y12',  lambda: 'λabc.a(bc)c',
                   lean: 'fun {α β γ : Type} (f : α → β) (g : β → α → γ) x => g (f x) x',
+                  scheme: '(lambda (f g) (lambda (x) (g (f x) x)))',
                   python: 'lambda f, g: lambda x: g(f(x), x)',
                   cpp: '[](auto f, auto g) { return [=](auto x) { return g(f(x), x); }; }' },
             D:  { bird: 'Dove',            arity: '2y21',  lambda: 'λabcd.ab(cd)',
                   lean: 'fun {α β γ δ : Type} (f : α → β → γ) x (g : δ → β) y => f x (g y)',
+                  scheme: '(lambda (f g) (lambda (x y) (f x (g y))))',
                   python: null, cpp: null },
             Δ:  { bird: 'Zebra Dove',      arity: '2y12',  lambda: 'λabcd.a(bc)d',
                   lean: 'fun {α β γ δ : Type} (f : β → γ → δ) (g : α → β) x y => f (g x) y',
+                  scheme: '(lambda (f g) (lambda (x y) (f (g x) y)))',
                   python: null, cpp: null },
             Ψ:  { bird: 'Psi',             arity: '2y21',  lambda: 'λabcd.a(bc)(bd)',
                   lean: 'fun {α β γ : Type} (f : β → β → γ) (g : α → β) x y => f (g x) (g y)',
+                  scheme: '(lambda (f g) (lambda (x y) (f (g x) (g y))))',
                   python: 'lambda f, g: lambda x, y: f(g(x), g(y))',
                   cpp: '[](auto f, auto g) { return [=](auto x, auto y) { return f(g(x), g(y)); }; }' },
             D2: { bird: 'Dovekie',         arity: '2y211', lambda: 'λabcde.a(bc)(de)',
                   lean: 'fun {α β γ δ ε : Type} (f : α → β) (g : β → δ → ε) (h : γ → δ) x y => g (f x) (h y)',
+                  scheme: '(lambda (f g h) (lambda (x y) (g (f x) (h y))))',
                   python: 'lambda f, g, h: lambda x, y: g(f(x), h(y))',
                   cpp: '[](auto f, auto g, auto h) { return [=](auto x, auto y) { return g(f(x), h(y)); }; }' },
             Φ:  { bird: 'Phoenix',         arity: '1y121', lambda: 'λabcd.a(bd)(cd)',
                   lean: 'fun {α β γ δ : Type} (f : α → β) (g : β → γ → δ) (h : α → γ) x => g (f x) (h x)',
+                  scheme: '(lambda (f g h) (lambda (x) (g (f x) (h x))))',
                   python: 'lambda f, g, h: lambda x: g(f(x), h(x))',
                   cpp: '[](auto f, auto g, auto h) { return [=](auto x) { return g(f(x), h(x)); }; }' },
             Φ1: { bird: 'Pheasant',        arity: '2y222', lambda: 'λabcde.a(bde)(cde)',
                   lean: 'fun {α β γ δ ε : Type} (f : α → β → γ) (g : γ → δ → ε) (h : α → β → δ) x y => g (f x y) (h x y)',
+                  scheme: '(lambda (f g h) (lambda (x y) (g (f x y) (h x y))))',
                   python: 'lambda f, g, h: lambda x, y: g(f(x, y), h(x, y))',
                   cpp: '[](auto f, auto g, auto h) { return [=](auto x, auto y) { return g(f(x, y), h(x, y)); }; }' },
             N:  { bird: 'Eastern Nicator', arity: '2y22',  lambda: 'λabcd.ab(cbd)',
                   lean: 'fun {α β γ δ : Type} (f : α → β → γ) x (g : α → δ → β) y => f x (g x y)',
+                  scheme: '(lambda (f g) (lambda (x y) (f x (g x y))))',
                   python: null, cpp: null },
             ν:  { bird: 'Western Nicator', arity: '2y22',  lambda: 'λabcd.a(bcd)d',
                   lean: 'fun {α β γ δ : Type} (f : β → α → γ) (g : δ → α → β) x y => f (g x y) y',
+                  scheme: '(lambda (f g) (lambda (x y) (f (g x y) y)))',
                   python: null, cpp: null }
         };
 
@@ -343,10 +357,11 @@
             APL: 'apl.png', Kap: 'kap_darkmode.png', J: 'j.svg',
             BQN: 'bqn.svg', TinyAPL: 'tinyapl.svg', FIXAPL: 'fixapl.png',
             Uiua: 'uiua.png', Haskell: 'haskell.svg',
-            Lean: 'lean.png', Python: 'python.png', 'C++': 'cpp.png'
+            Lean: 'lean.png', Scheme: 'scheme.svg', Python: 'python.png', 'C++': 'cpp.png'
         };
 
         const img = f => `<img src="${LOGOS}${f}" class="modal-lang-logo" alt="">`;
+        const displayScheme = spelling => spelling.replaceAll('lambda', 'λ');
         const label = n => {
             const f = langLogos[n];
             return `<span class="modal-lang-label">${f ? img(f) + ' ' : ''}${n}</span>`;
@@ -372,6 +387,7 @@
             let sp = `<tr><td><span class="modal-lang-label"><span class="modal-lambda-sym">λ</span></span></td><td><code>${info.lambda}</code></td></tr>`;
             if (info.lean)   sp += `<tr><td>${label('Lean')}</td><td><code>${info.lean}</code></td></tr>`;
             if (info.python) sp += `<tr><td>${label('Python')}</td><td><code>${info.python}</code></td></tr>`;
+            if (info.scheme) sp += `<tr><td>${label('Scheme')}</td><td><code>${displayScheme(info.scheme)}</code></td></tr>`;
             if (info.cpp)    sp += `<tr><td>${label('C++')}</td><td><code>${info.cpp}</code></td></tr>`;
             spellEl.innerHTML = sp;
 
